@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Jurnal Arif &amp; Arum 💕 — Diary Kita</title>
+  <meta name="description" content="Jurnal romantis Arif & Arum — foto kenangan, surat cinta, doa, dan buku tamu. Setiap pertemuan, tercatat selamanya. 💕" />
+  <meta name="theme-color" content="#ff8fb8" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>" />
+
+  <!-- Fonts: cute retro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Gochi+Hand&family=Quicksand:wght@400;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- SweetAlert2 -->
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet" />
+  <!-- Custom -->
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ══════════════ SPLASH SCREEN — TADC GLITCH STUDIO INTRO ══════════════ -->
+<div id="splash" role="dialog" aria-label="Intro Diary Arif dan Arum">
+  <div class="crt" aria-hidden="true"></div>
+  <p class="glitch-presents" aria-hidden="true"><span class="blink">✦</span> GLITCH&nbsp;&nbsp;S T U D I O&nbsp;&nbsp;P R E S E N T S <span class="blink">✦</span></p>
+  <div class="splash-sticker" aria-hidden="true">🐻💗🐰</div>
+  <h1 class="glitch-title" aria-label="Diary Arif dan Arum">
+    <span class="g-line g-line-1" data-text="DIARY">DIARY</span>
+    <span class="g-line g-line-2" data-text="ARIF &amp; ARUM">ARIF &amp; ARUM</span>
+    <span class="g-line g-line-3" data-text="&lt;3">&lt;3</span>
+  </h1>
+  <p class="glitch-homage">✦ a cute fan homage to <b>US</b> — <b>ARIF &amp; ARUM</b> ✦</p>
+  <button class="press-start" id="btnEnter"><span class="blink-fast">▶</span> PRESS&nbsp;START</button>
+  <p class="press-sub">MASUK DIARY KITA, SAYANG… 💕</p>
+</div>
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<nav class="navbar sticky-top navbar-cute navbar-expand-lg" aria-label="Navigasi utama">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-cute" href="#home">🐻 Diary Arif <span class="brand-heart">♥</span> Arum 💙</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu">
+      <span style="font-size:1.6rem">🍡</span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-lg-end" id="navMenu">
+      <ul class="navbar-nav gap-1 mt-2 mt-lg-0 text-center">
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#kenangan">📸 Kenangan</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#surat">💌 Surat Cinta</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#catatan">📖 Catatan Harian</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#doa">🤲 Doa</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#tamu">💬 Buku Tamu</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ HERO ══════════════ -->
+<header class="hero-section" id="home">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+        <span class="pill-cute">✨ THE DIARY OF OUR LOVE</span>
+        <h1 class="hero-title mt-2">Arif<br />&amp; Arum</h1>
+        <p class="hero-tagline">“setiap pertemuan, tercatat selamanya” 💕</p>
+
+        <div class="anniversary-bar mt-3" title="Tanggal momen pertama / hari jadi">
+          📅 <span>Bersama sejak <b id="anniversaryLabel">19 Sep 2026</b></span>
+          <button class="btn-edit-date" id="btnEditDate" aria-label="Ubah tanggal">✏️</button>
+        </div>
+
+        <div class="d-flex gap-2 justify-content-center justify-content-lg-start flex-wrap mt-3">
+          <a href="#kenangan" class="btn-cute btn-pink">📖 Lihat Kenangan</a>
+          <button class="btn-cute btn-blue" data-bs-toggle="modal" data-bs-target="#modalTambahMomen">➕ Tambah Momen</button>
+        </div>
+
+        <div class="d-flex gap-2 justify-content-center justify-content-lg-start mt-3 flex-wrap">
+          <div class="stat-chip"><span class="num" id="statDays">0</span><span class="lbl">hari<br />bersama 💞</span></div>
+          <div class="stat-chip blue"><span class="num" id="statMoments">0</span><span class="lbl">momen<br />tercatat 📸</span></div>
+          <div class="stat-chip"><span class="num">∞</span><span class="lbl">cinta yang<br />tak berhingga ♾️</span></div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 order-1 order-lg-2">
+        <div class="hero-collage" aria-hidden="true">
+          <figure class="polaroid hero-polaroid p1">
+            <img src="img/call-01.jpeg" alt="Video call manis Arif dan Arum" loading="eager" />
+            <figcaption>video call 📞</figcaption>
+          </figure>
+          <figure class="polaroid hero-polaroid p2 washi">
+            <img src="img/date-02.jpeg" alt="Arum tersenyum lebar di restoran saat kencan" loading="eager" />
+            <figcaption>date berdua 🥰</figcaption>
+          </figure>
+          <figure class="polaroid hero-polaroid p3">
+            <img src="img/night-01.jpeg" alt="Selfie malam berdua di pinggir jalan" loading="eager" />
+            <figcaption>jalan malam 🌙</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track" id="marqueeTrack">
+      <span>ARIF <b>♥</b> ARUM</span><span>SELAMANYA DAN SETERUSNYA</span><span><b>🐻</b> AKU SAYANG KAMU</span><span>AAMIIN YA RABBAL ‘ALAMIN</span><span>ARIF <b>♥</b> ARUM</span><span>SELAMANYA DAN SETERUSNYA</span><span><b>🐻</b> AKU SAYANG KAMU</span><span>AAMIIN YA RABBAL ‘ALAMIN</span>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ OST — 16-BIT GEMAS VINYL ══════════════ -->
+<section class="section-cute" id="ost" aria-label="Lagu tema kita">
+  <div class="container">
+    <div class="ost-16bit mx-auto" id="ostCard">
+      <div class="ost16-topbar">
+        <span class="ost16-badge"><span class="blink-fast">●</span> NOW PLAYING</span>
+        <span class="ost16-edition">16-BIT GEMAS EDITION ★</span>
+      </div>
+      <div class="ost16-body">
+        <div class="ost16-disc-col text-center">
+          <div class="ost16-disc-wrap">
+            <span class="ost16-sparkle sp1" aria-hidden="true">✦</span>
+            <span class="ost16-sparkle sp2" aria-hidden="true">✧</span>
+            <span class="ost16-sparkle sp3" aria-hidden="true">✦</span>
+            <div class="ost16-disc" id="vinyl" role="img" aria-label="Siluet anime gemas Arif dan Arum sedang berpelukan, gaya pixel art 16-bit">
+              <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <radialGradient id="neb" cx="50%" cy="36%" r="78%">
+                    <stop offset="0%" stop-color="#3a1747"/><stop offset="55%" stop-color="#1d0f2b"/><stop offset="100%" stop-color="#120822"/>
+                  </radialGradient>
+                  <radialGradient id="glowPink" cx="50%" cy="52%" r="55%">
+                    <stop offset="0%" stop-color="#ff2e9a" stop-opacity=".55"/><stop offset="100%" stop-color="#ff2e9a" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="glowCyan" cx="50%" cy="62%" r="60%">
+                    <stop offset="0%" stop-color="#00e5ff" stop-opacity=".3"/><stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="rimPink" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ff8ac6"/><stop offset="1" stop-color="#ff2e9a"/>
+                  </linearGradient>
+                  <linearGradient id="rimCyan" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#8ff5ff"/><stop offset="1" stop-color="#00e5ff"/>
+                  </linearGradient>
+                  <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+                    <feGaussianBlur stdDeviation="3.2" result="b"/>
+                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <path id="spark" d="M0 -9 L2.2 -2.2 L9 0 L2.2 2.2 L0 9 L-2.2 2.2 L-9 0 L-2.2 -2.2 Z"/>
+                </defs>
+                <rect width="400" height="400" fill="url(#neb)"/>
+                <circle cx="200" cy="215" r="175" fill="url(#glowPink)"/>
+                <circle cx="200" cy="245" r="150" fill="url(#glowCyan)"/>
+                <use href="#spark" transform="translate(88,118)" fill="#00e5ff" class="twinkle"/>
+                <use href="#spark" transform="translate(318,108) scale(.8)" fill="#ff5da2" class="twinkle tw2"/>
+                <use href="#spark" transform="translate(344,206) scale(.95)" fill="#00e5ff" class="twinkle tw3"/>
+                <use href="#spark" transform="translate(58,212) scale(.75)" fill="#ffd23f" class="twinkle tw2"/>
+                <use href="#spark" transform="translate(150,58) scale(.6)" fill="#ff5da2" class="twinkle tw3"/>
+                <use href="#spark" transform="translate(262,54) scale(.6)" fill="#8ff5ff" class="twinkle"/>
+                <g class="pix-heart beat" transform="translate(183,14) scale(1.05)" fill="#ff2e9a" shape-rendering="crispEdges">
+                  <rect x="7" y="0" width="7" height="7"/><rect x="21" y="0" width="7" height="7"/>
+                  <rect x="0" y="7" width="35" height="7"/><rect x="0" y="14" width="35" height="7"/>
+                  <rect x="7" y="21" width="21" height="7"/><rect x="14" y="28" width="7" height="7"/>
+                  <rect x="7" y="7" width="7" height="7" fill="#ffc0da"/>
+                </g>
+                <g class="pix-heart beat b2" transform="translate(96,66) scale(.62)" fill="#00e5ff" shape-rendering="crispEdges">
+                  <rect x="7" y="0" width="7" height="7"/><rect x="21" y="0" width="7" height="7"/>
+                  <rect x="0" y="7" width="35" height="7"/><rect x="0" y="14" width="35" height="7"/>
+                  <rect x="7" y="21" width="21" height="7"/><rect x="14" y="28" width="7" height="7"/>
+                </g>
+                <g class="pix-heart beat b3" transform="translate(284,60) scale(.55)" fill="#ffd23f" shape-rendering="crispEdges">
+                  <rect x="7" y="0" width="7" height="7"/><rect x="21" y="0" width="7" height="7"/>
+                  <rect x="0" y="7" width="35" height="7"/><rect x="0" y="14" width="35" height="7"/>
+                  <rect x="7" y="21" width="21" height="7"/><rect x="14" y="28" width="7" height="7"/>
+                </g>
+                <ellipse cx="200" cy="352" rx="180" ry="26" fill="#ff2e9a" opacity=".2"/>
+                <g fill="#07030e" class="couple-breathe">
+                  <path d="M96 350 C104 302 112 272 118 250 C92 236 96 190 102 150 C110 100 152 70 202 74 C220 76 227 94 228 120 L228 350 Z"/>
+                  <path d="M304 350 C296 302 288 272 282 250 C308 236 306 192 300 152 C292 102 250 70 206 73 C186 74 177 92 176 120 L176 350 Z"/>
+                  <circle cx="216" cy="70" r="15"/><circle cx="237" cy="68" r="16"/><circle cx="258" cy="73" r="15"/>
+                  <circle cx="278" cy="85" r="13"/><circle cx="292" cy="103" r="12"/><circle cx="300" cy="124" r="11"/>
+                  <path d="M244 60 C249 46 263 44 270 51 C259 49 251 53 249 63 Z"/>
+                </g>
+                <path d="M224 128 C227 158 225 190 216 220" fill="none" stroke="url(#rimPink)" stroke-width="4.5" stroke-linecap="round" filter="url(#softGlow)" opacity=".95"/>
+                <path d="M181 128 C178 158 180 190 189 220" fill="none" stroke="url(#rimCyan)" stroke-width="4.5" stroke-linecap="round" filter="url(#softGlow)" opacity=".95"/>
+                <path d="M103 252 C168 300 244 302 303 256" fill="none" stroke="#ff7ac0" stroke-width="3" stroke-linecap="round" opacity=".75" filter="url(#softGlow)"/>
+              </svg>
+              <div class="ost16-gloss"></div>
+            </div>
+          </div>
+        </div>
+        <div class="ost16-info col text-center text-md-start">
+          <p class="ost16-kicker">TRACK 09 · SIDE A · QA-ARIF-ARUM</p>
+          <h3 class="ost16-title">YOUR NEW<br />HOME</h3>
+          <p class="ost16-artist">YOU WILL ALWAYS MY MINE</p>
+          <p class="ost16-album">ARIF PERMANA PUTRASURYANA</p>
+          <p class="ost16-note">Pas banget buat kita: perjalanan panjang mencari “rumah baru” yang akhirnya pulang — dan di rumah mana pun, selalu ada kamu. 🏡💕 <span class="ost16-fan">(fan homage dari Arif, buat Arum 💗)</span></p>
+          <div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start flex-wrap mt-3">
+            <div class="equalizer ost16-eq" id="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <button class="ost16-btn" id="btnToggleOst">▶ PLAY</button>
+          </div>
+        </div>
+      </div>
+      <audio id="ostAudio" src="data/ost.mp3" preload="none" loop></audio>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ KENANGAN / GALLERY ══════════════ -->
+<section class="section-cute" id="kenangan">
+  <div class="container">
+    <div class="text-center mb-3">
+      <span class="section-tag blue">THE MEMORY LANE</span>
+      <h2 class="section-title">Momen <span class="hl-pink">Kita</span> 📸</h2>
+      <p class="section-sub">Setiap pertemuan baru bakal dipost di sini — abadi, hangat, dan selalu dirindukan.</p>
+    </div>
+
+    <div class="d-flex gap-2 justify-content-center flex-wrap mb-4" role="group" aria-label="Filter momen">
+      <button class="filter-chip active" data-filter="all">Semua 💕</button>
+      <button class="filter-chip" data-filter="kencan">Kencan 🍽️</button>
+      <button class="filter-chip" data-filter="call">Video Call 📞</button>
+      <button class="filter-chip" data-filter="malem">Malam Berdua 🌙</button>
+    </div>
+
+    <div class="row g-4" id="galleryGrid" aria-live="polite"><!-- dirender oleh app.js --></div>
+
+    <div class="row g-4 mt-1 justify-content-center">
+      <div class="col-12 col-lg-9">
+        <div class="video-card washi washi-blue">
+          <video controls preload="metadata" playsinline src="img/momen-video.mp4" aria-label="Video momen Arif dan Arum"></video>
+          <div class="p-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
+            <div class="polaroid-caption m-0">🎬 Momen kecil yang selalu pengen diulang — 18 Nov 2026</div>
+            <span class="tag-mini">Video</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SURAT CINTA ══════════════ -->
+<section class="section-cute" id="surat">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="section-tag">SURAT CINTA</span>
+      <h2 class="section-title">Kata-Kata <span class="hl-blue">Dari Hati</span> 💌</h2>
+      <p class="section-sub">Pujian untuk Arum, semangat untuk Arif, dan penguat untuk kita berdua.</p>
+    </div>
+
+    <div class="row g-4 align-items-stretch">
+      <div class="col-md-6 col-xl-4">
+        <article class="letter-card">
+          <div class="letter-head pink">🌹 To Arum — Kesayanganku</div>
+          <div class="letter-body">
+            <ul>
+              <li><span class="ico">😍</span>Arum, kamu itu definisi cantik yang sesungguhnya — bukan cuma di wajah, tapi di hati dan caramu tersenyum.</li>
+              <li><span class="ico">🌸</span>Tawamu obat paling mujarab di hari-hari beratku. Sekali kamu ketawa, dunia rasanya baik-baik saja.</li>
+              <li><span class="ico">👀</span>Tatapanmu lembutnya kayak bintang yang dipinjam langit cuma buat nemenin aku.</li>
+              <li><span class="ico">🧕</span>Hijabmu bukan batasan, tapi bingkai yang bikin cintaku makin kokoh, terjaga, dan berwibawa.</li>
+              <li><span class="ico">🤲</span>Kamu perempuan yang tenang, dan ketenanganmu itu rumah yang selalu ingin aku pulangi.</li>
+              <li><span class="ico">🍓</span>Setiap hal kecil tentangmu — cemberut lucumu, senyum malumu — semuanya bikin aku mabuk cinta.</li>
+              <li><span class="ico">💪</span>Kamu tangguh: lembut tapi tegas, manis tapi berprinsip. Itu langka, dan aku beruntung.</li>
+              <li><span class="ico">📖</span>Pintarmu, rajinmu, akhlakmu — semuanya kebanggaan terbesarku. Aku kagum, titik.</li>
+              <li><span class="ico">🌙</span>Kalau aku boleh memilih lagi, sejuta kali pun aku tetap memilih kamu.</li>
+              <li><span class="ico">♾️</span>Cintaku ke kamu itu bukan musim — dia iklim. Selamanya.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <article class="letter-card">
+          <div class="letter-head blue">🔥 To Arif — Sayangku, Pejuang Kita</div>
+          <div class="letter-body">
+            <ul>
+              <li><span class="ico">💪</span>Arif, kamu laki-laki hebat. Setiap usaha kerasmu sedang membangun istana masa depan kita.</li>
+              <li><span class="ico">🎯</span>Kejar mimpimu: kerja keras, terus belajar, jadi versi terbaikmu — Arum bangga banget sama kamu.</li>
+              <li><span class="ico">🌅</span>Setiap pagi yang kamu lalui dengan sabar adalah kemenangan kecil. Terus jalan, bang.</li>
+              <li><span class="ico">🧠</span>Otakmu encer, hatimu bersih — kombinasi langka. Pakai sebaik-baiknya.</li>
+              <li><span class="ico">🛠️</span>Kalau capek, istirahat — tapi jangan pernah berhenti. Jarak cuma dikalahkan oleh yang menyerah.</li>
+              <li><span class="ico">📉</span>Gagal itu bukan tamat, cuma tombol “coba lagi” — dan kamu juaranya level itu.</li>
+              <li><span class="ico">🤝</span>Tanggung jawabmu hari ini adalah fondasi kebahagiaan kita besok. Kamu lagi bangun sesuatu yang besar.</li>
+              <li><span class="ico">🔥</span>Jaga semangat, jaga kesehatan, jaga iman — tiga-tiganya tugas kehormatanmu.</li>
+              <li><span class="ico">🙏</span>Di setiap langkahmu, ada doa Arum yang menyertai tanpa pernah berhenti.</li>
+              <li><span class="ico">🏆</span>Kelak kamu akan jadi suami terbaik versi terbaikmu — dan itu dimulai dari hari ini.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-xl-4">
+        <article class="letter-card">
+          <div class="letter-head duo">💗 Penguat Hubungan Kita</div>
+          <div class="letter-body">
+            <ul>
+              <li><span class="ico">🏠</span>Rumah itu bukan tentang dinding, tapi tentang siapa yang menunggumu di balik pintu — aku dan kamu.</li>
+              <li><span class="ico">🤲</span>Cinta yang dibangun di atas doa tidak akan pernah ambruk dimakan waktu.</li>
+              <li><span class="ico">🗣️</span>Komunikasi itu jembatan; kalau retak, perbaiki sebelum jadi jurang.</li>
+              <li><span class="ico">🌶️</span>Beda itu bumbu, bukan musuh — selama saling menghormati, semuanya terasa nikmat.</li>
+              <li><span class="ico">🤝</span>Kita satu tim: menang bareng, jatuh bangun bareng, bangkit bareng.</li>
+              <li><span class="ico">🕊️</span>Memaafkan dengan cepat, mencintai dengan lama — itu resep abadi.</li>
+              <li><span class="ico">📈</span>Hubungan itu ditanam, disiram waktu &amp; cinta, dipanen dengan kesetiaan.</li>
+              <li><span class="ico">🕌</span>Dengan ridho Allah, hubungan ini bukan cuma sampai lamaran — tapi sampai jannah.</li>
+              <li><span class="ico">🚦</span>Saat ragu, pegang erat. Saat salah, akui. Saat benar, tetap tawadhu.</li>
+              <li><span class="ico">💞</span>Yang bertahan bukan yang paling menggebu, tapi yang paling sabar menjaga.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-lg-8 mx-auto">
+        <div class="quote-machine" id="quoteMachine">
+          <p class="quote-text" id="quoteText">Cinta yang lahir dari doa tidak butuh bukti — ia sudah jelas tujuannya: Allah di antara kita.</p>
+          <button class="btn-cute btn-pink mt-2" id="btnRandomQuote" style="font-size:.82rem">✨ Kutipan Lagi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CATATAN HARIAN (DIARY) ══════════════ -->
+<section class="section-cute" id="catatan">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="section-tag">SCRAPBOOK</span>
+      <h2 class="section-title">Catatan <span class="hl-pink">Harian</span> 📖</h2>
+      <p class="section-sub">Tulisan tangan dari hati — bukan sekadar teks di layar.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="diary-paper h-100">
+          <div id="diaryEntries"><!-- dirender oleh app.js --></div>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="comment-form-card h-100">
+          <h3 class="h5" style="font-family:var(--font-display);color:var(--blue-deep)">✏️ Tulis Catatan Baru</h3>
+          <label class="form-label fw-bold small mt-2" for="diaryDate">Tanggal</label>
+          <input type="date" class="form-cute" id="diaryDate" />
+          <label class="form-label fw-bold small mt-2" for="diaryAuthor">Penulis</label>
+          <select class="form-cute" id="diaryAuthor">
+            <option value="Arif">Arif 🧢</option>
+            <option value="Arum">Arum 🧕</option>
+            <option value="Berdua">Keduanya 💞</option>
+          </select>
+          <label class="form-label fw-bold small mt-2" for="diaryText">Isi catatan</label>
+          <textarea class="form-cute" id="diaryText" rows="4" maxlength="280" placeholder="Tulis apa pun yang kamu rasakan hari ini…"></textarea>
+          <div class="char-counter"><span id="diaryCharCount">0</span>/280</div>
+          <button class="btn-cute btn-blue w-100 justify-content-center mt-2" id="btnAddDiary">Simpan Catatan 🖊️</button>
+          <p class="mt-2 mb-0" style="font-size:.7rem;color:var(--ink-soft)">Catatan tersimpan di browser perangkat ini (localStorage) — siap dicetak ulang kapan pun. 🖨️</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ DOA ══════════════ -->
+<section class="section-cute" id="doa">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="section-tag blue">HARAPAN &amp; DOA</span>
+      <h2 class="section-title">Doa Untuk <span class="hl-blue">Kita Berdua</span> 🤲</h2>
+      <p class="section-sub">Sehat selalu, saling mencintai, dan dipertemukan selamanya.</p>
+    </div>
+
+    <div class="row g-3 g-lg-4">
+      <div class="col-md-6">
+        <div class="doa-card">
+          <h5>💊 Doa Kesehatan</h5>
+          <p>“Ya Allah, sehatkanlah badan kami berdua, kuatkanlah iman kami, jaga hati kami dari segala penyakit, dan jauhkan kami dari marabahaya. Berikan kami kesehatan agar bisa saling mencintai lebih lama.”</p>
+          <div class="doa-amin">🤲 AAMIIN YA RABBAL ‘ALAMIN</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="doa-card">
+          <h5>💍 Doa Cinta Abadi</h5>
+          <p>“Ya Allah, satukanlah hati kami sebagaimana Engkau satukan hati Adam dan Hawa. Barakallahu lana wa baraka ‘alaina, wa jama’a bainana fii khair. Jangan Engkau pisahkan kami kecuali dalam keadaan husnul khatimah.”</p>
+          <div class="doa-amin">🤲 AAMIIN YA RABBAL ‘ALAMIN</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="doa-card">
+          <h5>🏡 Doa Sakinah Mawaddah</h5>
+          <p>“Ya Allah, mudahkan urusan kami, lapangkan rezeki kami, dan tuntun kami membangun rumah tangga yang sakinah, mawaddah, wa rahmah — rumah yang penuh Al-Qur’an, tawa, dan keberkahan.”</p>
+          <div class="doa-amin">🤲 AAMIIN YA RABBAL ‘ALAMIN</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="doa-card">
+          <h5>🕌 Doa Dipertemukan di Surga</h5>
+          <p>“Ya Allah, jika Engkau takdirkan kami bersatu di dunia, sempurnakanlah cinta kami di dunia. Jika belum, pertemukanlah kami di Surga-Mu kelak, sebagai suami dan istri di dalamnya.”</p>
+          <div class="doa-amin">🤲 AAMIIN YA RABBAL ‘ALAMIN</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center mt-4" style="font-family:var(--font-hand);font-size:1.5rem;color:var(--pink-deep)">— dipersatukan di dunia, disurga-kan di akhirat — 🤍</p>
+  </div>
+</section>
+
+<!-- ══════════════ BUKU TAMU / KOMENTAR ══════════════ -->
+<section class="section-cute" id="tamu">
+  <div class="container">
+    <div class="text-center mb-4">
+      <span class="section-tag">BUKU TAMU</span>
+      <h2 class="section-title">Komentar &amp; <span class="hl-blue">Doa Restu</span> 💬</h2>
+      <p class="section-sub">Tulis doa, harapan, atau sekadar “gemes banget kalian” — semuanya berarti.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-lg-5">
+        <form class="comment-form-card" id="commentForm" novalidate>
+          <h3 class="h5" style="font-family:var(--font-display);color:var(--pink-deep)">✉️ Tulis Sesuatu…</h3>
+          <label class="form-label fw-bold small mt-2" for="commentName">Nama</label>
+          <input class="form-cute" id="commentName" list="nameSuggest" placeholder="Nama kamu…" maxlength="40" autocomplete="name" required />
+          <datalist id="nameSuggest">
+            <option value="Arif"></option>
+            <option value="Arum"></option>
+            <option value="Sahabat Arif &amp; Arum"></option>
+          </datalist>
+
+          <label class="form-label fw-bold small mt-2" for="commentText">Pesan</label>
+          <textarea class="form-cute" id="commentText" rows="4" maxlength="280" placeholder="Doa, harapan, atau pujian buat mereka berdua…" required></textarea>
+          <div class="d-flex justify-content-between align-items-center mt-1 flex-wrap gap-2">
+            <div class="d-flex gap-1 flex-wrap" aria-label="Emoji cepat">
+              <button type="button" class="emoji-pick" data-emoji="💕">💕</button>
+              <button type="button" class="emoji-pick" data-emoji="🥰">🥰</button>
+              <button type="button" class="emoji-pick" data-emoji="🥺">🥺</button>
+              <button type="button" class="emoji-pick" data-emoji="😍">😍</button>
+              <button type="button" class="emoji-pick" data-emoji="🤭">🤭</button>
+              <button type="button" class="emoji-pick" data-emoji="✨">✨</button>
+              <button type="button" class="emoji-pick" data-emoji="🤲">🤲</button>
+              <button type="button" class="emoji-pick" data-emoji="🐻">🐻</button>
+            </div>
+          </div>
+          <div class="char-counter"><span id="commentCharCount">0</span>/280</div>
+          <button type="submit" class="btn-cute btn-pink w-100 justify-content-center mt-1" id="btnSubmitComment">Kirim Komentar 💌</button>
+        </form>
+      </div>
+      <div class="col-lg-7">
+        <div id="commentList" class="d-flex flex-column gap-3" aria-live="polite"><p class="text-center" style="color:var(--ink-soft)">Memuat komentar… 💗</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="footer-cute">
+  <div class="container">
+    <div class="foot-hearts" aria-hidden="true">💕💗💞💗💕</div>
+    <div class="foot-title mt-2">Diary Arif &amp; Arum</div>
+    <p class="mt-2 mb-1" style="max-width:36rem;margin-inline:auto">
+      Dibuat dengan cinta, kopi, dan doa — oleh <b>Arif</b>, untuk <b>Arum</b>.<br />
+      Sampai akhir hayat, dan semoga sampai Surga. 🕌✨
+    </p>
+    <button class="btn-cute mt-3" id="btnShareWa" type="button" style="background:#25d366;color:#06280f;border-color:#06280f;box-shadow:4px 4px 0 #06280f;font-size:.82rem">💌 Kirim Diary Ini ke Arum</button>
+    <p class="mt-3 mb-0" style="font-size:.78rem;color:#ffd3e4">Dibuat dengan Cinta &lt;3 oleh <b>Arif Permana Putrasuryana</b></p>
+  </div>
+</footer>
+
+<!-- ══════════════ MODAL: TAMBAH MOMEN ══════════════ -->
+<div class="modal fade" id="modalTambahMomen" tabindex="-1" aria-labelledby="modalTambahLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border:3px solid var(--ink);border-radius:1.4rem;box-shadow:8px 8px 0 var(--ink);background:var(--cream)">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title" id="modalTambahLabel" style="font-family:var(--font-display);color:var(--pink-deep)">➕ Tambah Momen Baru</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <label class="form-label fw-bold small" for="momentTitle">Judul momen *</label>
+        <input class="form-cute" id="momentTitle" maxlength="60" placeholder="Contoh: Makan malam berdua lagi 🍜" />
+
+        <div class="row g-2 mt-1">
+          <div class="col-6">
+            <label class="form-label fw-bold small" for="momentDate">Tanggal</label>
+            <input type="date" class="form-cute" id="momentDate" />
+          </div>
+          <div class="col-6">
+            <label class="form-label fw-bold small" for="momentCat">Kategori</label>
+            <select class="form-cute" id="momentCat">
+              <option value="kencan">Kencan 🍽️</option>
+              <option value="call">Video Call 📞</option>
+              <option value="malem">Malam Berdua 🌙</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="form-label fw-bold small mt-2" for="momentStory">Ceritanya…</label>
+        <textarea class="form-cute" id="momentStory" rows="3" maxlength="220" placeholder="Apa yang terjadi di momen ini?"></textarea>
+
+        <label class="form-label fw-bold small mt-2" for="momentFile">Foto (dari galeri/kamera)</label>
+        <input type="file" class="form-cute" id="momentFile" accept="image/*" />
+        <label class="form-label fw-bold small mt-2" for="momentUrl">…atau tempel link foto</label>
+        <input type="url" class="form-cute" id="momentUrl" placeholder="https://…" />
+        <img id="momentPreview" alt="Pratinjau foto" class="img-fluid rounded-3 mt-2 d-none" style="max-height:180px;border:2px solid var(--pink)" />
+      </div>
+      <div class="modal-footer border-0 pt-0">
+        <button class="btn-cute btn-pink w-100 justify-content-center" id="btnSaveMoment">Simpan Momen 💖</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ FLOATING ICONS & FAB ══════════════ -->
+<div id="floatLayer" aria-hidden="true"></div>
+
+<div id="fabStack" aria-label="Aksi cepat">
+  <button class="fab fab-yellow" id="fabMusic" title="Putar / pause OST 🎵" aria-label="Putar atau jeda musik">🎵</button>
+  <button class="fab fab-blue" id="fabComment" title="Ke Buku Tamu 💬" aria-label="Ke buku tamu">💬</button>
+  <button class="fab fab-pink" id="fabTop" title="Kembali ke atas ⬆️" aria-label="Kembali ke atas">⬆️</button>
+</div>
+<button class="hug-btn" id="hugBtn" title="Kirim pelukan virtual 🤗" aria-label="Kirim pelukan virtual">🐻</button>
+
+<!-- ══════════════ LIGHTBOX ══════════════ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+  <button class="lb-btn" id="lbClose" aria-label="Tutup">✕</button>
+  <button class="lb-btn" id="lbPrev" aria-label="Foto sebelumnya">‹</button>
+  <figure class="m-0">
+    <img id="lbImg" src="" alt="" />
+    <figcaption class="lb-caption" id="lbCaption"></figcaption>
+  </figure>
+  <button class="lb-btn" id="lbNext" aria-label="Foto berikutnya">›</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
