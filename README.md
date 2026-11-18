@@ -61,10 +61,10 @@ Sekarang mendukung **10 track**: `data/1.mp3` sampai `data/10.mp3`.
 | Slot | Status |
 |------|--------|
 | `data/1.mp3` | ✅ **Our New World** — tersedia |
-| `data/2.mp3` – `data/4.mp3` | ✅ Tersedia |
-| `data/5.mp3` – `data/10.mp3` | 🔒 Terkunci — otomatis terbuka saat file ditambahkan |
+| `data/2.mp3` – `data/7.mp3` | ✅ Tersedia |
+| `data/8.mp3` – `data/10.mp3` | 🔒 Terkunci — otomatis terbuka saat file ditambahkan |
 
-**Menambah lagu baru (5–10):**
+**Menambah lagu baru (8–10):**
 1. Siapkan file MP3 kamu, rename jadi `2.mp3` … `10.mp3`
 2. Taruh di folder `data/`
 3. `git add data/ && git commit -m "add track" && git push`

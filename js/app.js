@@ -97,7 +97,7 @@ const PLAYLIST = [
   { file: "data/10.mp3", title: "???", artist: "SEGERA HADIR", album: "TRACK 10 · DIARY ARIF & ARUM" },
 ];
 let currentTrack = 0;
-const trackAvailable = PLAYLIST.map((_, i) => i < 4); // track 1–4 ada di repo (ikut deploy)
+const trackAvailable = PLAYLIST.map((_, i) => i < 7); // track 1–7 ada di repo (ikut deploy)
 let ostPlaying = false;
 const pad2 = (n) => String(n).padStart(2, "0");
 
@@ -180,9 +180,9 @@ $("#ostMenuList").addEventListener("click", (e) => {
 $("#btnPrevTrack").addEventListener("click", prevAvailable);
 $("#btnNextTrack").addEventListener("click", nextAvailable);
 
-/* deteksi track 5–10 via HEAD request (hanya menambah, tidak mengurangi) */
+/* deteksi track 8–10 via HEAD request (hanya menambah, tidak mengurangi) */
 (async function detectTracks() {
-  for (let i = 4; i < PLAYLIST.length; i++) {
+  for (let i = 7; i < PLAYLIST.length; i++) {
     try {
       const res = await fetch(PLAYLIST[i].file, { method: "HEAD" });
       if (res.ok) trackAvailable[i] = true;
