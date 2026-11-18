@@ -10,7 +10,3 @@ desktop.ini
 # Editor
 .vscode/
 .idea/
-
-# Musik: file ost.mp3 TIDAK ikut di-push/deploy (hak cipta).
-# Website tetap jalan; tombol OST akan menawarkan buka YouTube.
-data/ost.mp3

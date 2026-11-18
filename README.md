@@ -83,7 +83,7 @@ jurnal_arif_arum/
 ├── js/app.js           # Galeri, lightbox, diary, komentar, OST player, share WA, floating icons
 ├── api/comments.php    # Backend komentar (PHP, untuk Laragon/hosting PHP)
 ├── data/comments.json  # Penyimpanan komentar (Laragon)
-├── data/ost.mp3        # (TIDAK di-push — hak cipta) OST lokal
+├── data/ost.mp3        # OST — ikut di-deploy, tombol PLAY langsung bunyi
 ├── vercel.json         # Konfigurasi deploy Vercel
 └── img/                # Foto & video perjalanan & petualangan kita
 ```
