@@ -339,7 +339,7 @@ const QUOTES = [
   'Kalau cinta adalah lautan, aku rela berenang selamanya asalkan sampai padamu.',
   'Kita bukan manusia sempurna; kita dua hati yang belajar mencintai dengan benar.',
   'Rumah tangga impian kita dimulai dari hal-hal kecil yang kita jaga hari ini.',
-  'Semoga setiap kenangan kita jadi saksi di hadapan Allah.',
+  'Semoga setiap perjalanan kita disaksikan Allah.',
   'Kamu adalah bacaan favoritku yang tidak pernah aku tamatkan.',
   'Yang kuinginkan cuma satu: sehat, dan terus mencintaimu sampai akhir hayat.',
   'Arum, senyummu lebih manis daripada hari Minggu pagi tanpa alarm.',
@@ -531,19 +531,27 @@ $('#btnShareWa').addEventListener('click', async (e) => {
 /* ============================================================
    8) FLOATING ICONS & FAB
    ============================================================ */
-const FLOAT_EMOJIS = ['🐻', '💖', '⭐', '🌸', '☁️', '🍒', '🦋', '💗', '🌼', '🐰'];
+const FLOAT_EMOJIS = ['⭐', '💗', '🌸', '✨', '🍓', '💛', '🍒', '🌟', '🌼', '🍀'];
 (function spawnFloats() {
   if (reducedMotion) return;
   const layer = $('#floatLayer');
-  for (let i = 0; i < 14; i++) {
+  for (let i = 0; i < 12; i++) {
     const s = document.createElement('span');
     s.className = 'float-emoji';
     s.textContent = FLOAT_EMOJIS[i % FLOAT_EMOJIS.length];
-    s.style.setProperty('--size', (1.2 + Math.random() * 1.3).toFixed(2) + 'rem');
+    s.style.setProperty('--size', (1.2 + Math.random() * 1.2).toFixed(2) + 'rem');
     s.style.setProperty('--dur', (11 + Math.random() * 12).toFixed(1) + 's');
     s.style.setProperty('--delay', (-Math.random() * 14).toFixed(1) + 's');
     s.style.left = (Math.random() * 96) + 'vw';
     layer.appendChild(s);
+  }
+  for (let i = 0; i < 4; i++) {
+    const p = document.createElement('span');
+    p.className = 'float-pokeball';
+    p.style.setProperty('--dur', (15 + Math.random() * 10).toFixed(1) + 's');
+    p.style.setProperty('--delay', (-Math.random() * 16).toFixed(1) + 's');
+    p.style.left = (8 + Math.random() * 84) + 'vw';
+    layer.appendChild(p);
   }
 })();
 $('#fabTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' }));

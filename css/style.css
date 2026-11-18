@@ -54,136 +54,79 @@ body {
 
 ::selection { background: var(--pink); color: #fff; }
 
-/* ============ SPLASH — GLITCH STUDIO INTRO (TADC HOMAGE) ============ */
+/* ============ SPLASH — POKÉMON GOLD TITLE SCREEN ============ */
 #splash {
   position: fixed; inset: 0; z-index: 2000;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 1.5rem; gap: .9rem; overflow: hidden;
-  background: radial-gradient(circle at 50% 28%, #2c1240 0%, #170b22 55%, #0a0512 100%);
-  transition: opacity .7s ease, visibility .7s ease;
-  animation: crtFlicker 6s steps(1) infinite;
+  gap: .75rem; text-align: center; overflow: hidden; padding: 1.5rem;
+  background: radial-gradient(circle at 50% 32%, #fff8d0 0%, #ffe985 30%, #ffd050 62%, #efa024 100%);
+  transition: opacity .6s ease, visibility .6s ease;
 }
 #splash.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-@keyframes crtFlicker {
-  0%, 100% { opacity: 1; }
-  7% { opacity: .82; } 8% { opacity: 1; }
-  38% { opacity: .88; } 39% { opacity: 1; }
-  73% { opacity: .8; } 74% { opacity: 1; }
-}
 
-.crt { position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: repeating-linear-gradient(0deg, rgba(0,0,0,.38) 0 2px, transparent 2px 4px);
+.pk-rays {
+  position: absolute; width: 160vmax; height: 160vmax; top: 50%; left: 50%;
+  background: repeating-conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.6) 0 11deg, transparent 11deg 24deg);
+  animation: raysSpin 55s linear infinite; pointer-events: none;
 }
-.crt::after { content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at center, transparent 42%, rgba(0,0,0,.75) 100%);
-}
+@keyframes raysSpin { from { transform: translate(-50%, -50%) rotate(0); } to { transform: translate(-50%, -50%) rotate(360deg); } }
 
-.glitch-presents {
-  position: relative; z-index: 2;
-  font-family: 'Press Start 2P', monospace; font-size: .55rem;
-  color: #00e5ff; letter-spacing: .28em; margin: 0;
-  text-shadow: 0 0 10px rgba(0,229,255,.8);
-  animation: presentFade 1s .15s both, lineJitter 7s steps(1) infinite;
+.pk-kicker {
+  position: relative; margin: 0; font-family: 'Press Start 2P', monospace; font-size: .5rem;
+  color: #6a4800; letter-spacing: .35em; animation: presentFade .7s .15s both;
 }
-@keyframes lineJitter {
-  0%, 90%, 100% { transform: translate(0); }
-  91% { transform: translate(-5px, 2px); }
-  93% { transform: translate(4px, -1px); }
-  95% { transform: translate(-2px, 1px); }
-  96% { transform: translate(0); }
-}
-
-.splash-sticker {
-  position: relative; z-index: 2;
-  font-size: clamp(3.2rem, 14vw, 5rem);
+.pk-mascot {
+  position: relative; font-size: clamp(3rem, 14vw, 4.8rem);
   animation: stickerFloat 2.4s ease-in-out infinite;
-  filter: drop-shadow(0 0 22px rgba(255, 46, 154, .7));
+  filter: drop-shadow(0 9px 0 rgba(120, 70, 0, .35));
 }
 @keyframes stickerFloat {
   0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50%      { transform: translateY(-18px) rotate(4deg); }
+  50%      { transform: translateY(-16px) rotate(4deg); }
 }
-
-.glitch-title { position: relative; z-index: 2; margin: 0; line-height: 1.4; display: flex; flex-direction: column; gap: .45rem; }
-.g-line {
-  font-family: 'Press Start 2P', monospace; display: block; position: relative; color: #fff;
+.pk-title { position: relative; margin: 0; display: flex; flex-direction: column; gap: .25rem; line-height: 1.2; }
+.pk-line { display: block; position: relative; font-family: 'Press Start 2P', monospace; }
+.pk-line-1 {
+  font-size: clamp(2rem, 11vw, 3.5rem); letter-spacing: .1em; color: #f84838;
+  text-shadow: 3px 3px 0 #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 7px 8px 0 #783000;
+  animation: titleDrop .8s .3s both;
 }
-.g-line-1 {
-  font-size: clamp(1.5rem, 8.5vw, 2.8rem); letter-spacing: .12em;
-  text-shadow: 4px 4px 0 #ff2e9a;
-  animation: glitchIn .7s .45s both;
+.pk-line-2 {
+  font-size: clamp(1.05rem, 6vw, 1.9rem); letter-spacing: .05em; color: #ffd838;
+  text-shadow: 2px 2px 0 #783000, -2px -2px 0 #783000, 2px -2px 0 #783000, -2px 2px 0 #783000, 6px 7px 0 #583800;
+  animation: titleDrop .8s .5s both;
 }
-.g-line-2 {
-  font-size: clamp(1.05rem, 5.6vw, 1.9rem); letter-spacing: .05em; color: #ffd23f;
-  text-shadow: 3px 3px 0 #0a0410, -2px -2px 0 #ff2e9a, 2px -2px 0 #00e5ff, -2px 2px 0 #ff2e9a, 6px 6px 12px rgba(255,46,154,.45);
-  animation: glitchIn .7s .7s both;
+.pk-line-3 {
+  font-size: clamp(1.7rem, 9.5vw, 2.9rem); color: #ffffff;
+  text-shadow: 2px 2px 0 #d82848, -2px -2px 0 #d82848, 2px -2px 0 #d82848, -2px 2px 0 #d82848, 5px 6px 0 rgba(120, 0, 30, .35);
+  animation: titleDrop .8s .7s both, heartBeatTiny 1.15s 1.5s infinite;
 }
-.g-line-3 {
-  font-size: clamp(1.7rem, 9.5vw, 3rem);
-  text-shadow: 4px 4px 0 #00e5ff, -4px -4px 0 #ff2e9a;
-  animation: glitchIn .7s .95s both, heartBeatTiny 1.15s 1.9s infinite;
+@keyframes titleDrop {
+  0% { opacity: 0; transform: translateY(-64px) scale(.6); }
+  60% { opacity: 1; transform: translateY(9px) scale(1.16); }
+  80% { transform: translateY(-3px) scale(.96); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-@keyframes heartBeatTiny { 0%,100% { transform: scale(1); } 30% { transform: scale(1.28); } 55% { transform: scale(.94); } }
-.g-line::before, .g-line::after {
-  content: attr(data-text); position: absolute; left: 0; right: 0; top: 0;
-  opacity: .8; pointer-events: none; mix-blend-mode: screen;
+.pk-sub {
+  position: relative; margin: 0; font-family: 'Press Start 2P', monospace; font-size: .48rem;
+  color: #8a5800; letter-spacing: .28em; animation: presentFade .8s 1s both;
 }
-.g-line::before { color: #00e5ff; clip-path: inset(12% 0 58% 0); animation: sliceA 2.6s steps(2, end) infinite; }
-.g-line::after  { color: #ff2e9a; clip-path: inset(62% 0 10% 0); animation: sliceB 2.1s steps(2, end) infinite; }
-@keyframes sliceA {
-  0%, 86%, 100% { transform: translate(0); }
-  88% { transform: translate(-7px, 2px); } 90% { transform: translate(6px, -2px); }
-  92% { transform: translate(-4px, 1px); } 94% { transform: translate(5px, 0); }
+.pk-press {
+  position: relative; font-family: 'Press Start 2P', monospace; font-size: .62rem; letter-spacing: .18em;
+  color: #383028; background: #fffdf0; border: 4px solid #383028; border-radius: 8px;
+  padding: .85rem 1.7rem; cursor: pointer; margin-top: .2rem;
+  box-shadow: 0 5px 0 #383028;
+  animation: presentFade .8s 1.25s both, blinkSoft 1.4s 1.25s steps(2, start) infinite;
+  transition: transform .12s, box-shadow .12s;
 }
-@keyframes sliceB {
-  0%, 78%, 100% { transform: translate(0); }
-  80% { transform: translate(7px, -2px); } 82% { transform: translate(-6px, 2px); }
-  84% { transform: translate(4px, -1px); }
+.pk-press:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #383028; }
+.pk-press:active { transform: translateY(4px); box-shadow: 0 1px 0 #383028; }
+@keyframes blinkSoft { 0%, 60% { opacity: 1; } 61%, 100% { opacity: .3; } }
+.pk-copy {
+  position: relative; margin: 0; font-family: 'Press Start 2P', monospace; font-size: .4rem;
+  color: #6a4800; animation: presentFade .8s 1.4s both;
 }
-@keyframes glitchIn {
-  0% { opacity: 0; transform: translateY(28px) skewX(10deg); filter: blur(3px); }
-  35% { opacity: 1; }
-  60% { transform: translateY(-5px) skewX(-7deg); }
-  100% { opacity: 1; transform: translateY(0) skewX(0); filter: blur(0); }
-}
-
-.glitch-homage {
-  position: relative; z-index: 2; margin: 0;
-  font-family: var(--font-body); font-weight: 700; font-size: .62rem;
-  letter-spacing: .18em; text-transform: uppercase; color: #c79ae0;
-  animation: presentFade .9s 1.15s both;
-}
-.glitch-homage b { color: #ff9ecf; font-weight: 700; }
-
-.press-start {
-  position: relative; z-index: 2;
-  font-family: 'Press Start 2P', monospace; font-size: .72rem; letter-spacing: .18em;
-  color: #ffd23f; background: transparent; border: 4px solid #ffd23f; border-radius: 4px;
-  padding: .9rem 1.7rem; cursor: pointer; margin-top: .2rem;
-  text-shadow: 2px 2px 0 #7a4a00;
-  box-shadow: 0 0 16px rgba(255, 210, 63, .35), inset 0 0 14px rgba(255, 210, 63, .22);
-  animation: presentFade .9s 1.3s both, pressPulse 1.5s 1.3s infinite;
-  transition: background .15s, color .15s, transform .15s;
-}
-.press-start:hover { background: #ffd23f; color: #1a0f00; text-shadow: none; transform: translateY(-2px); }
-.press-start:active { transform: scale(.93); }
-@keyframes pressPulse {
-  0%, 100% { box-shadow: 0 0 12px rgba(255,210,63,.3), inset 0 0 12px rgba(255,210,63,.2); }
-  50%      { box-shadow: 0 0 34px rgba(255,210,63,.65), inset 0 0 20px rgba(255,210,63,.4); }
-}
-.blink { animation: blinkStep 1.1s steps(2, start) infinite; }
-.blink-fast { animation: blinkStep .5s steps(2, start) infinite; display: inline-block; }
-@keyframes blinkStep { to { visibility: hidden; } }
-
-.press-sub {
-  position: relative; z-index: 2; margin: 0;
-  font-family: var(--font-hand); font-size: 1.05rem; color: #ffb3d5;
-  animation: presentFade .9s 1.45s both;
-}
-@keyframes presentFade {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+@keyframes presentFade { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
 /* ============ NAVBAR ============ */
 .navbar-cute {
@@ -726,4 +669,136 @@ body {
 .produk-note {
   font-size: .83rem; font-weight: 700; color: var(--pink-deep);
   background: var(--pink-faint); border: 2px dashed var(--pink-soft); border-radius: 12px; padding: .55rem .7rem;
+}
+
+/* ════════════════════════════════════════════════════════════
+   POKÉMON GOLD / NINTENDO DS — cozy pixel skin (appended)
+   ════════════════════════════════════════════════════════════ */
+body {
+  background-color: #f6eed0;
+  background-image:
+    radial-gradient(circle, rgba(56, 48, 40, .15) 1.4px, transparent 1.5px),
+    radial-gradient(circle, rgba(240, 200, 80, .5) 1.4px, transparent 1.5px);
+  background-size: 22px 22px;
+  background-position: 0 0, 11px 11px;
+}
+
+/* navbar: cream game menu */
+.navbar-cute { background: #fdf8e0; border-bottom: 4px solid #383028; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.navbar-brand-cute { color: #e04838 !important; }
+.nav-link-cute:hover { background: #ffe9a8; color: #b04800 !important; }
+.pokeball-mini {
+  display: inline-block; width: 20px; height: 20px; border-radius: 50%;
+  border: 2.5px solid #383028; vertical-align: -4px; position: relative; margin-right: .15rem;
+  background: linear-gradient(#f84838 0 44%, #383028 44% 56%, #ffffff 56% 100%);
+}
+.pokeball-mini::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 6px; height: 6px;
+  border-radius: 50%; background: #fff; border: 2px solid #383028; transform: translate(-50%, -50%);
+}
+
+/* chunky pixel buttons */
+.btn-cute { border-radius: .6rem; border: 3px solid #383028; box-shadow: 0 5px 0 #383028; }
+.btn-cute:hover { transform: translateY(-2px); box-shadow: 0 7px 0 #383028; }
+.btn-cute:active { transform: translateY(3px); box-shadow: 0 1px 0 #383028; }
+.btn-pink { background: linear-gradient(#ff7898, #f84868); }
+.btn-blue { background: linear-gradient(#68b8f8, #3890e0); }
+.btn-cream { background: #fffdf0; }
+
+/* marquee: legendary banner */
+.marquee-strip { background: #383028; border-top: 4px solid #ffd838; border-bottom: 4px solid #ffd838; }
+.marquee-track span { color: #ffd838; }
+
+/* section tags: badge style */
+.section-tag {
+  background: #ffe9a8; color: #8a5800; border: 2.5px solid #d8a828; border-style: solid;
+  border-radius: .45rem; font-family: 'Press Start 2P', monospace; font-size: .48rem;
+  letter-spacing: .14em; padding: .45rem .8rem;
+}
+.section-tag.blue { background: #cdeaff; color: #085c8a; border-color: #58a8d8; }
+
+/* stat chips: HP bar edition */
+.stat-chip { background: #fffdf0; border: 3px solid #383028; box-shadow: 0 4px 0 #383028; border-radius: .6rem; min-width: 96px; }
+.hp-bar { width: 100%; height: 7px; background: #fff; border: 2px solid #383028; border-radius: 4px; overflow: hidden; margin-top: .35rem; }
+.hp-fill {
+  height: 100%; width: var(--hpw, 100%);
+  background: repeating-linear-gradient(-45deg, #58c040 0 6px, #388020 6px 12px);
+  animation: hpFill 1.5s ease-out .35s both;
+}
+@keyframes hpFill { from { width: 0; } to { width: var(--hpw, 100%); } }
+
+/* letter cards → Pokémon cards */
+.letter-card { border: 4px solid #383028; box-shadow: 0 6px 0 #383028; border-radius: .7rem; background: #fffdf0; overflow: hidden; }
+.letter-head.pink { background: linear-gradient(#f86888, #e03858); }
+.letter-head.blue { background: linear-gradient(#58b0f0, #2890d8); }
+.letter-head.duo { background: linear-gradient(120deg, #e04858 0%, #c880f0 50%, #2890d8 100%); }
+.pkm-card-foot {
+  display: flex; justify-content: space-between; gap: .5rem;
+  border-top: 3px solid #383028; background: #f6e8c8;
+  padding: .4rem .8rem; font-family: 'Press Start 2P', monospace; font-size: .4rem;
+  color: #6a5848; letter-spacing: .08em;
+}
+
+/* polaroid → pixel frame */
+.polaroid-card { border: 3px solid #383028; background: #fffdf0; box-shadow: 0 6px 0 rgba(56,48,40,.85); }
+.polaroid-date { background: #383028; color: #ffd838; }
+
+/* diary → textbox */
+.diary-paper { border: 4px solid #383028; box-shadow: 0 6px 0 #383028; background-color: #fffbe8; }
+
+/* doa cards */
+.doa-card { border: 3px solid #58a8d8; border-radius: .6rem; box-shadow: 0 5px 0 rgba(40, 80, 120, .4); background: linear-gradient(170deg, #eaf7ff, #fffdf0 80%); }
+
+/* comments & forms */
+.comment-form-card, .comment-item { background: #fffdf0; border: 3px solid #383028; box-shadow: 0 4px 0 #383028; border-radius: .7rem; }
+.form-cute { background: #fffbe8; border-color: #c8b888; }
+.form-cute:focus { border-color: #58c040; box-shadow: 0 0 0 4px rgba(88,192,64,.35); }
+.quote-machine { background: #fffdf0; border: 3px solid #383028; box-shadow: 0 5px 0 #383028; }
+
+/* FABs → game buttons */
+.fab { border: 3px solid #383028; box-shadow: 0 4px 0 #383028; border-radius: .6rem; }
+.fab:hover { transform: scale(1.15) rotate(-4deg); }
+.hug-btn { border: 3px solid #383028; box-shadow: 0 4px 0 #383028; background: #fffdf0; }
+
+/* footer: legendary banner */
+.footer-cute { background: #383028; border-top: 4px solid #ffd838; }
+.footer-cute .foot-title { color: #ffd838; }
+
+/* OST 16-bit → Pokémon Gold "legendary" edition */
+.ost-16bit {
+  background:
+    radial-gradient(circle at 15% 12%, rgba(255, 216, 56, .4), transparent 46%),
+    radial-gradient(circle at 85% 88%, rgba(248, 72, 56, .35), transparent 46%),
+    #241606 !important;
+  box-shadow: 0 0 0 4px #ffd838, 0 0 0 8px #383028, 0 16px 44px rgba(0,0,0,.55) !important;
+}
+.ost16-topbar { background: #383028 !important; border-bottom: 3px solid #ffd838 !important; }
+.ost16-badge { color: #ffd838 !important; }
+.ost16-edition { color: #ff9088 !important; }
+.ost16-kicker { color: #ff9088 !important; text-shadow: 0 0 8px rgba(248,72,56,.7) !important; }
+.ost16-title {
+  color: #ffe870 !important;
+  text-shadow: 3px 3px 0 #a85408, -1px -1px 0 #fff3c0, 0 0 22px rgba(255, 216, 56, .5) !important;
+}
+.ost16-artist { color: #ffd838 !important; }
+.ost16-album { color: #ffe9a8 !important; opacity: .9 !important; }
+.ost16-note { color: #fff3c0 !important; }
+.ost16-fan { color: #ffd838 !important; }
+.ost16-btn { background: #ffd838 !important; }
+.ost16-disc { box-shadow: 0 0 0 4px #ffd838, 0 0 0 8px #383028, 0 0 48px rgba(255,216,56,.55), inset 0 0 46px #000 !important; }
+.ost16-disc:hover { box-shadow: 0 0 0 4px #f84838, 0 0 0 8px #383028, 0 0 56px rgba(248,72,56,.55), inset 0 0 46px #000 !important; }
+.ost16-eq span, .equalizer span { background: #58c040 !important; }
+.ost16-eq span:nth-child(odd), .equalizer span:nth-child(odd) { background: #ffd838 !important; }
+.ost16-eq span:nth-child(3n), .equalizer span:nth-child(3n) { background: #f84838 !important; }
+
+/* floating pokéballs */
+.float-pokeball {
+  position: absolute; bottom: -3rem; width: 32px; height: 32px; border-radius: 50%;
+  border: 3px solid #383028; opacity: .9;
+  background: linear-gradient(#f84838 0 44%, #383028 44% 56%, #ffffff 56% 100%);
+  animation: floatRise var(--dur, 14s) linear infinite; animation-delay: var(--delay, 0s);
+}
+.float-pokeball::after {
+  content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px;
+  border-radius: 50%; background: #fff; border: 2px solid #383028; transform: translate(-50%, -50%);
 }

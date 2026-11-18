@@ -2,16 +2,17 @@
 
 > **“Setiap pertemuan, tercatat selamanya.”**
 
-Jurnal romantis **Arif & Arum** — foto kenangan, surat cinta, doa, dan buku tamu. Mobile-first, aksen pink × biru (tone The Amazing Digital Circus), font retro gemas (Shrikhand + Gochi Hand + Quicksand + Press Start 2P), dibangun dengan **Bootstrap 5** dan **SweetAlert2**.
+Jurnal romantis **Arif & Arum** — foto perjalanan & petualangan kita, surat cinta, doa, dan buku tamu. Mobile-first, nuansa **Pokémon Gold / Nintendo DS** — pixel cozy, retro, gemas — dengan aksen pink × biru, dan font retro gemas (Shrikhand + Gochi Hand + Quicksand + Press Start 2P). Dibangun dengan **Bootstrap 5** dan **SweetAlert2**.
 
 💞 **Bersama sejak 19 September 2026.**
 
 ## ✨ Fitur
 
-- 🎬 **Splash screen — glitch studio intro** (ala The Amazing Digital Circus): teks “DIARY ARIF & ARUM <3” dengan efek GLITCH/RGB-split, CRT scanlines, flicker, tombol **▶ PRESS START**
+- 🎮 **Splash screen — Pokémon Gold title screen**: sunburst kuning, teks pixel “DIARY / ARIF & ARUM / <3” drop-in ala title screen, tombol **▶ PRESS START** berkedip, copyright “© 2026 ARIF & ARUM”
 - 💿 **OST "Our New World"** — **Arif Permana Putrasuryana** · official OST diary ini — diputar sebagai **vinyl 16-bit gemas yang berputar**, dengan siluet anime gemas Arif & Arum berpelukan (SVG digambar manual: Arum hijab rim-light pink × Arif rambut acak rim-light cyan, bintang pixel & pixel heart), label “16-BIT GEMAS EDITION”, equalizer pixel + tombol PLAY/PAUSE chunky
-- 📸 **Galeri Momen** — polaroid aesthetic, filter (Kencan / Video Call / Malam Berdua), lightbox, 💖, dan **tambah momen baru** (upload foto dari HP — otomatis dikompresi — atau tempel link)
-- 💌 **Surat Cinta** — pujian untuk Arum 🌹, semangat untuk Arif 🔥, penguat hubungan 💗 + *random quote machine* ✨
+- 🗺️ **Petualangan Kita** (dulu “Kenangan”) — polaroid aesthetic, filter (Kencan / Video Call / Malam Berdua), lightbox, 💖, dan **tambah momen baru** (upload foto dari HP — otomatis dikompresi — atau tempel link)
+- 🃏 **Surat Cinta ala Pokémon Card** — No.001 ARUM · No.006 ARIF · No.150 HUBUNGAN (HP ∞, LV.MAX / SHINY ★)
+- 💖 **Kursor custom**: 💘 normal · 💖 hover · 💞 saat klik — pujian untuk Arum 🌹, semangat untuk Arif 🔥, penguat hubungan 💗 + *random quote machine* ✨
 - 📖 **Catatan Harian** — scrapbook dengan garis kertas & margin merah ala buku tulis
 - 🤲 **Doa Untuk Kita Berdua** — kesehatan, cinta abadi, sakinah mawaddah, dipertemukan di Surga
 - 💬 **Buku Tamu / Komentar** — SweetAlert2 + backend PHP (`api/comments.php` → `data/comments.json`), **fallback otomatis ke localStorage** saat API tidak tersedia (termasuk di Vercel)
@@ -84,7 +85,7 @@ jurnal_arif_arum/
 ├── data/comments.json  # Penyimpanan komentar (Laragon)
 ├── data/ost.mp3        # (TIDAK di-push — hak cipta) OST lokal
 ├── vercel.json         # Konfigurasi deploy Vercel
-└── img/                # Foto & video kenangan
+└── img/                # Foto & video perjalanan & petualangan kita
 ```
 
 ## 🛠️ Teknologi

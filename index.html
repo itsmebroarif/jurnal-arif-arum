@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Jurnal Arif &amp; Arum 💕 — Diary Kita</title>
-  <meta name="description" content="Jurnal romantis Arif & Arum — foto kenangan, surat cinta, doa, dan buku tamu. Setiap pertemuan, tercatat selamanya. 💕" />
+  <meta name="description" content="Jurnal romantis Arif & Arum — foto perjalanan kita, surat cinta, doa, dan buku tamu. Setiap pertemuan, tercatat selamanya. 💕" />
   <meta name="theme-color" content="#ff8fb8" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>" />
 
@@ -22,31 +22,31 @@
 </head>
 <body>
 
-<!-- ══════════════ SPLASH SCREEN — TADC GLITCH STUDIO INTRO ══════════════ -->
-<div id="splash" role="dialog" aria-label="Intro Diary Arif dan Arum">
-  <div class="crt" aria-hidden="true"></div>
-  <p class="glitch-presents" aria-hidden="true"><span class="blink">✦</span> GLITCH&nbsp;&nbsp;S T U D I O&nbsp;&nbsp;P R E S E N T S <span class="blink">✦</span></p>
-  <div class="splash-sticker" aria-hidden="true">🐻💗🐰</div>
-  <h1 class="glitch-title" aria-label="Diary Arif dan Arum">
-    <span class="g-line g-line-1" data-text="DIARY">DIARY</span>
-    <span class="g-line g-line-2" data-text="ARIF &amp; ARUM">ARIF &amp; ARUM</span>
-    <span class="g-line g-line-3" data-text="&lt;3">&lt;3</span>
+<!-- ══════════════ SPLASH — POKÉMON GOLD TITLE SCREEN ══════════════ -->
+<div id="splash" role="dialog" aria-label="Diary Arif dan Arum">
+  <div class="pk-rays" aria-hidden="true"></div>
+  <p class="pk-kicker" aria-hidden="true">ARIF ★ ARUM PRESENT</p>
+  <div class="splash-sticker pk-mascot" aria-hidden="true">🐻💕🐰</div>
+  <h1 class="pk-title" aria-label="Diary Arif dan Arum">
+    <span class="pk-line pk-line-1">DIARY</span>
+    <span class="pk-line pk-line-2">ARIF &amp; ARUM</span>
+    <span class="pk-line pk-line-3">&lt;3</span>
   </h1>
-  <p class="glitch-homage">✦ a cute fan homage to <b>US</b> — <b>ARIF &amp; ARUM</b> ✦</p>
-  <button class="press-start" id="btnEnter"><span class="blink-fast">▶</span> PRESS&nbsp;START</button>
-  <p class="press-sub">MASUK DIARY KITA, SAYANG… 💕</p>
+  <p class="pk-sub">✦ A CUTE LOVE ADVENTURE ✦</p>
+  <button class="pk-press" id="btnEnter">▶ PRESS START</button>
+  <p class="pk-copy" aria-hidden="true">© 2026 ARIF &amp; ARUM · Diary of Our Love ™</p>
 </div>
 
 <!-- ══════════════ NAVBAR ══════════════ -->
 <nav class="navbar sticky-top navbar-cute navbar-expand-lg" aria-label="Navigasi utama">
   <div class="container">
-    <a class="navbar-brand navbar-brand-cute" href="#home">🐻 Diary Arif <span class="brand-heart">♥</span> Arum 💙</a>
+    <a class="navbar-brand navbar-brand-cute" href="#home"><span class="pokeball-mini" aria-hidden="true"></span> Diary Arif <span class="brand-heart">♥</span> Arum 💙</a>
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Buka menu">
       <span style="font-size:1.6rem">🍡</span>
     </button>
     <div class="collapse navbar-collapse justify-content-lg-end" id="navMenu">
       <ul class="navbar-nav gap-1 mt-2 mt-lg-0 text-center">
-        <li class="nav-item"><a class="nav-link nav-link-cute" href="#kenangan">📸 Kenangan</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#perjalanan">🗺️ Petualangan</a></li>
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#surat">💌 Surat Cinta</a></li>
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#catatan">📖 Catatan Harian</a></li>
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#doa">🤲 Doa</a></li>
@@ -71,14 +71,14 @@
         </div>
 
         <div class="d-flex gap-2 justify-content-center justify-content-lg-start flex-wrap mt-3">
-          <a href="#kenangan" class="btn-cute btn-pink">📖 Lihat Kenangan</a>
+          <a href="#perjalanan" class="btn-cute btn-pink">🗺️ Lihat Petualangan</a>
           <button class="btn-cute btn-blue" data-bs-toggle="modal" data-bs-target="#modalTambahMomen">➕ Tambah Momen</button>
         </div>
 
         <div class="d-flex gap-2 justify-content-center justify-content-lg-start mt-3 flex-wrap">
-          <div class="stat-chip"><span class="num" id="statDays">0</span><span class="lbl">hari<br />bersama 💞</span></div>
-          <div class="stat-chip blue"><span class="num" id="statMoments">0</span><span class="lbl">momen<br />tercatat 📸</span></div>
-          <div class="stat-chip"><span class="num">∞</span><span class="lbl">cinta yang<br />tak berhingga ♾️</span></div>
+          <div class="stat-chip"><span class="num" id="statDays">0</span><span class="lbl">HARI BERSAMA 💞</span><div class="hp-bar"><div class="hp-fill" style="--hpw:100%"></div></div></div>
+          <div class="stat-chip blue"><span class="num" id="statMoments">0</span><span class="lbl">PETUALANGAN 🗺️</span><div class="hp-bar"><div class="hp-fill" style="--hpw:78%"></div></div></div>
+          <div class="stat-chip"><span class="num">∞</span><span class="lbl">CINTA ♾️</span><div class="hp-bar"><div class="hp-fill" style="--hpw:100%"></div></div></div>
         </div>
       </div>
 
@@ -204,12 +204,12 @@
   </div>
 </section>
 
-<!-- ══════════════ KENANGAN / GALLERY ══════════════ -->
-<section class="section-cute" id="kenangan">
+<!-- ══════════════ PERJALANAN / PETUALANGAN ══════════════ -->
+<section class="section-cute" id="perjalanan">
   <div class="container">
     <div class="text-center mb-3">
-      <span class="section-tag blue">THE MEMORY LANE</span>
-      <h2 class="section-title">Momen <span class="hl-pink">Kita</span> 📸</h2>
+      <span class="section-tag blue">THE JOURNEY OF US</span>
+      <h2 class="section-title">Petualangan <span class="hl-pink">Kita</span> 🗺️</h2>
       <p class="section-sub">Setiap pertemuan baru bakal dipost di sini — abadi, hangat, dan selalu dirindukan.</p>
     </div>
 
@@ -263,6 +263,7 @@
               <li><span class="ico">♾️</span>Cintaku ke kamu itu bukan musim — dia iklim. Selamanya.</li>
             </ul>
           </div>
+          <div class="pkm-card-foot"><span>No.001 · ARUM ♥</span><span>HP ∞</span><span>LV.MAX ★</span></div>
         </article>
       </div>
 
@@ -283,6 +284,7 @@
               <li><span class="ico">🏆</span>Kelak kamu akan jadi suami terbaik versi terbaikmu — dan itu dimulai dari hari ini.</li>
             </ul>
           </div>
+          <div class="pkm-card-foot"><span>No.006 · ARIF 🔥</span><span>HP ∞</span><span>LV.MAX ★</span></div>
         </article>
       </div>
 
@@ -303,6 +305,7 @@
               <li><span class="ico">💞</span>Yang bertahan bukan yang paling menggebu, tapi yang paling sabar menjaga.</li>
             </ul>
           </div>
+          <div class="pkm-card-foot"><span>No.150 · HUBUNGAN</span><span>HP ∞</span><span>SHINY ★</span></div>
         </article>
       </div>
     </div>
@@ -488,6 +491,7 @@
     </p>
     <button class="btn-cute mt-3" id="btnShareWa" type="button" style="background:#25d366;color:#06280f;border-color:#06280f;box-shadow:4px 4px 0 #06280f;font-size:.82rem">💌 Kirim Diary Ini ke Arum</button>
     <p class="mt-3 mb-0" style="font-size:.78rem;color:#ffd3e4">Dibuat dengan Cinta &lt;3 oleh <b>Arif Permana Putrasuryana</b></p>
+    <p class="mb-0" style="font-size:.58rem;color:#9a8898;margin-top:.4rem">Pokémon™ adalah milik Nintendo · diary ini adalah fan homage buatan penggemar, bukan produk resmi</p>
   </div>
 </footer>
 
