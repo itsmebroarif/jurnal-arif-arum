@@ -228,7 +228,7 @@ const SEED_MOMENTS = [
     id: "m-date-02",
     img: "img/date-02.jpeg",
     title: "Arum senyum lebar di restoran",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "kencan",
     tag: "Kencan",
     story:
@@ -240,7 +240,7 @@ const SEED_MOMENTS = [
     id: "m-night-01",
     img: "img/night-01.jpeg",
     title: "Jalan malam berdua",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "malem",
     tag: "Malam Berdua",
     story: "Dengan kamu, jalanan biasa pun jadi tempat paling istimewa. 🌙",
@@ -251,7 +251,7 @@ const SEED_MOMENTS = [
     id: "m-date-01",
     img: "img/date-01.jpeg",
     title: "Makan berdua di restorannya",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "kencan",
     tag: "Kencan",
     story:
@@ -263,7 +263,7 @@ const SEED_MOMENTS = [
     id: "m-call-01",
     img: "img/call-01.jpeg",
     title: "Video call manis kita",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "call",
     tag: "Video Call",
     story: "Walaupun beda layar, hati kita sebelahan. Bangga banget sama kamu.",
@@ -274,7 +274,7 @@ const SEED_MOMENTS = [
     id: "m-date-03",
     img: "img/date-03.jpeg",
     title: "Serenade restoran kita",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "kencan",
     tag: "Kencan",
     story: "Duduk berdua, ketawa kecil — tanpa banyak kata, udah cukup. 💞",
@@ -285,7 +285,7 @@ const SEED_MOMENTS = [
     id: "m-call-02",
     img: "img/call-02.jpeg",
     title: "Arum cemberut lucu 😤",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "call",
     tag: "Video Call",
     story:
@@ -297,7 +297,7 @@ const SEED_MOMENTS = [
     id: "m-night-02",
     img: "img/night-02.jpeg",
     title: "Peace ✌️ di pinggir jalan",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "malem",
     tag: "Malam Berdua",
     story: "Pose favoritku. Kamu selalu bisa bikin aku ketawa lepas. 🤭",
@@ -308,7 +308,7 @@ const SEED_MOMENTS = [
     id: "m-date-04",
     img: "img/date-04.jpeg",
     title: "Arif lagi salting",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "kencan",
     tag: "Kencan",
     story:
@@ -320,7 +320,7 @@ const SEED_MOMENTS = [
     id: "m-call-03",
     img: "img/call-03.jpeg",
     title: "Tatapan dari layar",
-    date: "2026-11-18",
+    date: "2026-10-31",
     cat: "call",
     tag: "Video Call",
     story: "Mata kamu adalah bintangnya aplikasi video call. ✨",
@@ -676,17 +676,17 @@ $("#btnRandomQuote").addEventListener("click", (e) => {
    ============================================================ */
 const SEED_DIARY = [
   {
-    date: "2026-11-18",
+    date: "2026-10-31",
     author: "Arum",
     text: "Aku tau Arif nervous banget tadi di restoran. Tapi justru di situ aku ngerasa paling dicintai. Jalan malam setelahnya, selfie di pinggir jalan sambil peace ✌ — aku berharap hari ini gak pernah selesai. Bismillah, semoga jalan kita selalu diridhoi. Aamiin.",
   },
   {
-    date: "2026-11-18",
+    date: "2026-10-31",
     author: "Arif",
     text: "Hari ini aku dan Arum makan malam berdua di restorannya. Hijab hitam, senyum yang bikin aku salah tingkah terus. Aku gak banyak ngomong, tapi semoga hatinya bisa baca dari mataku: “kamu cantik banget.”",
   },
   {
-    date: "2026-11-18",
+    date: "2026-10-31",
     author: "Berdua",
     text: "Momen pertama yang tercatat di jurnal ini: makan malam berdua, video call absurd, jalan malam penuh tawa — tanpa rekayasa. Ya Allah, terima kasih atas pertemuan ini. Jagalah kami, satukan kami sampai akhir hayat, dan pertemukan kami kembali di Surga. 🤍",
   },
@@ -758,7 +758,7 @@ const SEED_COMMENTS = [
     name: "Arif",
     message:
       "Untuk Arum: makasih sudah jadi rumah terhangat buat aku. Setiap hari sama kamu adalah alasan terbesar buat semangat. Aku sayang kamu, selalu. 💕",
-    time: "2026-11-18T19:40:00+07:00",
+    time: "2026-10-31T19:40:00+07:00",
     likes: 12,
   },
   {
@@ -766,7 +766,7 @@ const SEED_COMMENTS = [
     name: "Arum",
     message:
       "Untuk Arif: kamu laki-laki paling hebat yang pernah Tuhan titipkan ke aku. Jangan pernah nyerah ya — aku selalu bangga sama kamu, di mana pun dan kapan pun. 🥰",
-    time: "2026-11-18T20:05:00+07:00",
+    time: "2026-10-31T20:05:00+07:00",
     likes: 9,
   },
 ];
