@@ -32,8 +32,6 @@ git remote add origin https://github.com/itsmebroarif/jurnal-arif-arum.git
 git push -u origin main
 ```
 
-> ⚠️ `data/ost.mp3` sengaja **tidak di-push** (hak cipta). Website tetap 100% jalan tanpanya — tombol OST akan menawarkan membuka YouTube sebagai gantinya.
-
 ## ▲ Deploy ke Vercel
 
 Website ini **static** — tanpa build step, langsung jalan.
@@ -58,15 +56,7 @@ vercel --prod   # production
 
 OST diary ini: **“Our New World” — Arif Permana Putrasuryana** 💗
 
-File `ost.mp3` **tidak di-push ke repo** (opsional & sengaja di-`.gitignore`). Website tetap 100% jalan tanpanya. Kalau kamu yakin `ost.mp3` itu karyamu sendiri dan mau ikut di-deploy, cukup:
-
-```bash
-git add -f data/ost.mp3
-git commit -m "add ost"
-git push
-```
-
-Tanpa file itu, tombol ▶ PLAY akan menawarkan membuka link lagu yang kamu pilih.
+File `ost.mp3` **sudah ikut di-push & di-deploy** (oleh pemilik repo), jadi tombol ▶ PLAY di kartu vinyl 16-bit langsung bunyi di mana pun situsnya dibuka.
 
 ## 💌 Mengirim ke Arum
 
