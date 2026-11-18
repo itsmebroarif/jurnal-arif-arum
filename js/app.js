@@ -519,7 +519,7 @@ $('#commentList').addEventListener('click', async (e) => {
    ============================================================ */
 $('#btnShareWa').addEventListener('click', async (e) => {
   const url = window.location.href;
-  const text = `Hai Arum 💕 Aku baru aja bikin diary buat kita — foto-foto kita, surat cintaku, doa, dan lagu "Your New Home". Lihat ya, cantik… 🌙`;
+  const text = `Hai Arum 💕 Aku baru aja bikin diary buat kita — foto-foto kita, surat cintaku, doa, dan lagu "Our New World". Lihat ya, cantik… 🌙`;
   heartBurst(e.clientX, e.clientY, 8);
   if (navigator.share) {
     try { await navigator.share({ title: 'Diary Arif & Arum 💕', text, url }); return; }

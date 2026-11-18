@@ -8,8 +8,8 @@ Jurnal romantis **Arif & Arum** — foto kenangan, surat cinta, doa, dan buku ta
 
 ## ✨ Fitur
 
-- 🎬 **Splash screen — glitch studio intro** (ala The Amazing Digital Circus): teks “DIARY ARIF & ARUM <3” dengan efek GILITCH/RGB-split, CRT scanlines, flicker, tombol **▶ PRESS START**
-- 💿 **OST "Your New Home (Finale Ver.)"** — AVIAND & Watchme iD · EP 9 OST — diputar sebagai **vinyl 16-bit gemas yang berputar**, dengan siluet anime gemas Arif & Arum berpelukan (SVG digambar manual: Arum hijab rim-light pink × Arif rambut acak rim-light cyan, bintang pixel & pixel heart), label “16-BIT GEMAS EDITION”, equalizer pixel + tombol PLAY/PAUSE chunky
+- 🎬 **Splash screen — glitch studio intro** (ala The Amazing Digital Circus): teks “DIARY ARIF & ARUM <3” dengan efek GLITCH/RGB-split, CRT scanlines, flicker, tombol **▶ PRESS START**
+- 💿 **OST "Our New World"** — **Arif Permana Putrasuryana** · official OST diary ini — diputar sebagai **vinyl 16-bit gemas yang berputar**, dengan siluet anime gemas Arif & Arum berpelukan (SVG digambar manual: Arum hijab rim-light pink × Arif rambut acak rim-light cyan, bintang pixel & pixel heart), label “16-BIT GEMAS EDITION”, equalizer pixel + tombol PLAY/PAUSE chunky
 - 📸 **Galeri Momen** — polaroid aesthetic, filter (Kencan / Video Call / Malam Berdua), lightbox, 💖, dan **tambah momen baru** (upload foto dari HP — otomatis dikompresi — atau tempel link)
 - 💌 **Surat Cinta** — pujian untuk Arum 🌹, semangat untuk Arif 🔥, penguat hubungan 💗 + *random quote machine* ✨
 - 📖 **Catatan Harian** — scrapbook dengan garis kertas & margin merah ala buku tulis
@@ -17,6 +17,7 @@ Jurnal romantis **Arif & Arum** — foto kenangan, surat cinta, doa, dan buku ta
 - 💬 **Buku Tamu / Komentar** — SweetAlert2 + backend PHP (`api/comments.php` → `data/comments.json`), **fallback otomatis ke localStorage** saat API tidak tersedia (termasuk di Vercel)
 - 🐻 **Floating icons gemes** (beruang, hati, bintang, bunga) + tombol pelukan virtual 🤗
 - 💌 **“Kirim Diary Ini ke Arum”** — tombol share: membuka WhatsApp (wa.me / Web Share API) dengan teks otomatis; tinggal pilih Arum & kirim
+- 🎀 **Produk Resmi Kita: [PinkyPlan](https://pinkyplan.vercel.app/)** — kartu “produk” paket gemas; satu-satunya produk kita: **ngebucin** 💗
 - ⏳ **Penghitung hari bersama** — default **19 Sep 2026**, bisa diubah lewat tombol ✏️
 
 ## 🚀 Push ke GitHub
@@ -54,7 +55,17 @@ vercel --prod   # production
 
 ## 🎵 Tentang OST & `ost.mp3`
 
-`Your New Home (Finale Ver.)` bukan konten bebas lisensi, jadi file `ost.mp3` **tidak di-commit ke repo publik maupun di-deploy**. Untuk mendengar OST di perangkatmu: pastikan `data/ost.mp3` ada (lokal di Laragon) — tombol ▶ PLAY di kartu 16-bit akan memutarnya. Tanpa file itu, tombol PLAY menawarkan membuka OST-nya di YouTube.
+OST diary ini: **“Our New World” — Arif Permana Putrasuryana** 💗
+
+File `ost.mp3` **tidak di-push ke repo** (opsional & sengaja di-`.gitignore`). Website tetap 100% jalan tanpanya. Kalau kamu yakin `ost.mp3` itu karyamu sendiri dan mau ikut di-deploy, cukup:
+
+```bash
+git add -f data/ost.mp3
+git commit -m "add ost"
+git push
+```
+
+Tanpa file itu, tombol ▶ PLAY akan menawarkan membuka link lagu yang kamu pilih.
 
 ## 💌 Mengirim ke Arum
 

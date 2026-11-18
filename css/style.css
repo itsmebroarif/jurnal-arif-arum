@@ -672,3 +672,58 @@ body {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ============ PRODUK RESMI KITA (PinkyPlan) ============ */
+.produk-card {
+  max-width: 860px; background: linear-gradient(150deg, #fff 0%, #ffeef6 55%, #eaf7ff 100%);
+  border: 3px solid var(--ink); border-radius: var(--radius); box-shadow: var(--shadow);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+@media (min-width: 768px) { .produk-card { flex-direction: row; } }
+
+.produk-pack {
+  flex: 0 0 38%; position: relative;
+  background: repeating-linear-gradient(-45deg, #ff9ec7 0 26px, #ffc2da 26px 52px);
+  border-bottom: 3px solid var(--ink);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .55rem;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 768px) { .produk-pack { border-bottom: none; border-right: 3px solid var(--ink); } }
+
+.produk-pack-emoji { font-size: 4.4rem; filter: drop-shadow(0 6px 0 rgba(95,74,94,.3)); animation: stickerFloat 2.4s ease-in-out infinite; }
+.produk-barcode {
+  width: 160px; height: 50px; border: 2px solid var(--ink); border-radius: 6px; background-color: #fff;
+  background-image: repeating-linear-gradient(90deg,
+    var(--ink) 0 2px, transparent 2px 4px,
+    var(--ink) 4px 5px, transparent 5px 8px,
+    var(--ink) 8px 12px, transparent 12px 14px,
+    var(--ink) 14px 15px, transparent 15px 19px);
+}
+.produk-barcode-num { font-family: 'Press Start 2P', monospace; font-size: .52rem; letter-spacing: .3em; color: var(--ink); }
+.produk-pack-label {
+  font-family: 'Press Start 2P', monospace; font-size: .78rem; line-height: 1.7; text-align: center;
+  color: #fff; background: var(--pink-deep); border: 3px solid var(--ink); border-radius: 8px;
+  padding: .35rem .9rem; transform: rotate(-2deg); box-shadow: var(--shadow-sm);
+}
+.produk-pack-label span { font-size: .46rem; color: var(--yellow); letter-spacing: .32em; }
+
+.produk-body { padding: 1.4rem 1.4rem 1.3rem; display: flex; flex-direction: column; gap: .45rem; justify-content: center; }
+.produk-badge {
+  display: inline-block; align-self: flex-start;
+  font-family: 'Press Start 2P', monospace; font-size: .48rem; letter-spacing: .12em;
+  background: var(--yellow); color: var(--ink); border: 2px solid var(--ink); border-radius: 6px;
+  padding: .4rem .65rem; transform: rotate(-1.2deg); box-shadow: var(--shadow-sm);
+}
+.produk-name {
+  font-family: var(--font-display); font-size: clamp(2rem, 9vw, 2.8rem); margin: .2rem 0;
+  background: linear-gradient(120deg, var(--pink-deep), var(--pink) 45%, var(--blue-deep));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.produk-tagline { font-family: var(--font-hand); font-size: 1.15rem; line-height: 1.35; }
+.produk-list { list-style: none; padding: 0; margin: .2rem 0; font-size: .87rem; font-weight: 600; }
+.produk-list li { padding: .25rem 0; border-bottom: 1.5px dashed var(--pink-soft); }
+.produk-list li:last-child { border-bottom: 0; }
+.produk-note {
+  font-size: .83rem; font-weight: 700; color: var(--pink-deep);
+  background: var(--pink-faint); border: 2px dashed var(--pink-soft); border-radius: 12px; padding: .55rem .7rem;
+}
