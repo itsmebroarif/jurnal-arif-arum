@@ -835,47 +835,6 @@ async function fetchComments() {
     );
   }
 }
-async function submitComment(name, message) {
-  if (!backendDown) {
-    try {
-      const res = await fetch(API, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ action: "add", name, message }),
-      });
-      if (!res.ok) throw new Error("backend " + res.status);
-      const data = await res.json();
-      if (data && data.comment) {
-        myCommentIds.push(String(data.comment.id));
-        LS.set("aa_my_comments", myCommentIds);
-      }
-      await fetchComments();
-      return true;
-    } catch {
-      backendDown = true;
-    }
-  }
-  const c = {
-    id: "local-" + Date.now(),
-    name,
-    message,
-    time: new Date().toISOString(),
-    likes: 0,
-  };
-  localComments.unshift(c);
-  LS.set("aa_comments_local", localComments);
-  myCommentIds.push(String(c.id));
-  LS.set("aa_my_comments", myCommentIds);
-  renderComments(
-    [...localComments].sort((a, b) =>
-      String(b.time).localeCompare(String(a.time)),
-    ),
-  );
-  return true;
-}
 $("#commentText").addEventListener("input", () => {
   $("#commentCharCount").textContent = $("#commentText").value.length;
 });
@@ -888,7 +847,7 @@ $$(".emoji-pick").forEach((btn) =>
     ta.focus();
   }),
 );
-$("#commentForm").addEventListener("submit", async (e) => {
+$("#commentForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = $("#commentName").value.trim();
   const message = $("#commentText").value.trim();
@@ -909,22 +868,29 @@ $("#commentForm").addEventListener("submit", async (e) => {
     return;
   }
 
-  const btn = $("#btnSubmitComment");
-  btn.disabled = true;
-  btn.textContent = "Mengirim… 💌";
-  await submitComment(name, message);
+  const checked = document.querySelector('input[name="waTarget"]:checked');
+  const target = checked ? checked.value : "6285817048266";
+  const targetName = target === "6285817048266" ? "Arif 🧢" : "Arum 🧕";
+  const text = [
+    "Halo " + targetName + " 💕 Aku " + name + " ninggalin pesan di Diary Arif & Arum:",
+    "",
+    "“" + message + "”",
+    "",
+    "— dari " + window.location.href,
+  ].join("\n");
+  window.open(
+    "https://wa.me/" + target + "?text=" + encodeURIComponent(text),
+    "_blank",
+    "noopener",
+  );
   $("#commentText").value = "";
   $("#commentCharCount").textContent = "0";
-  btn.disabled = false;
-  btn.textContent = "Kirim Komentar 💌";
   swalCute({
     icon: "success",
-    title: "Terkirim! 💌",
-    text: "Makasih udah ikut menghangatkan diary kita.",
-    timer: 2100,
-    showConfirmButton: false,
+    title: "WhatsApp terbuka! 📱",
+    html: "Pesan kamu sudah terisi otomatis di WhatsApp —<br>tinggal tekan <b>KIRIM</b> di sana ya 💌",
+    confirmButtonText: "Oke, siap!",
   });
-  fetchComments();
 });
 $("#commentList").addEventListener("click", async (e) => {
   const likeBtn = e.target.closest("[data-like-comment]");

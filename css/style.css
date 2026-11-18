@@ -833,3 +833,31 @@ body {
 .ost16-track.locked { opacity: .38; cursor: not-allowed; filter: saturate(.35); }
 .ost16-track-num { color: #ff9088; }
 .ost16-track-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* ============ NO HORIZONTAL SCROLL ============ */
+html, body { overflow-x: hidden !important; max-width: 100%; }
+img, video, svg, iframe { max-width: 100%; }
+.marquee-strip { transform: none !important; width: 100%; margin: 0 !important; }
+.hero-collage { overflow: visible; }
+@media (max-width: 991.98px) {
+  .hero-polaroid.p1 { transform: rotate(-8deg) translate(-30%, 6%) scale(.8); }
+  .hero-polaroid.p3 { transform: rotate(9deg) translate(30%, 6%) scale(.8); }
+  .hero-polaroid.p2 { width: min(46vw, 180px); }
+}
+
+/* ============ WHATSAPP RECIPIENT PILLS ============ */
+.wa-recipient { display: flex; gap: .5rem; flex-wrap: wrap; }
+.wa-pill { position: relative; margin: 0; cursor: pointer; }
+.wa-pill input { position: absolute; opacity: 0; pointer-events: none; }
+.wa-pill span {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: var(--font-body); font-weight: 800; font-size: .82rem;
+  color: var(--ink); background: #fffdf0; border: 2.5px solid #383028; border-radius: 999px;
+  padding: .42rem .9rem; box-shadow: 0 3px 0 #383028; transition: all .15s;
+}
+.wa-pill span:hover { transform: translateY(-2px); box-shadow: 0 5px 0 #383028; }
+.wa-pill input:checked + span {
+  background: #25d366; color: #06280f; border-color: #06280f;
+  transform: translateY(2px); box-shadow: 0 1px 0 #06280f;
+}
+.wa-pill input:focus-visible + span { outline: 3px solid #25d366; outline-offset: 2px; }

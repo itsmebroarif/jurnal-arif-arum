@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Jurnal Arif &amp; Arum 💕 — Diary Kita</title>
-  <meta name="description" content="Jurnal romantis Arif & Arum — foto perjalanan kita, surat cinta, doa, dan buku tamu. Setiap pertemuan, tercatat selamanya. 💕" />
+  <meta name="description" content="Jurnal romantis Arif & Arum — foto perjalanan kita, surat cinta, doa, dan komentar. Setiap pertemuan, tercatat selamanya. 💕" />
   <meta name="theme-color" content="#ff8fb8" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐻</text></svg>" />
 
@@ -50,7 +50,7 @@
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#surat">💌 Surat Cinta</a></li>
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#catatan">📖 Catatan Harian</a></li>
         <li class="nav-item"><a class="nav-link nav-link-cute" href="#doa">🤲 Doa</a></li>
-        <li class="nav-item"><a class="nav-link nav-link-cute" href="#tamu">💬 Buku Tamu</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-cute" href="#tamu">💬 Komentar</a></li>
       </ul>
     </div>
   </div>
@@ -408,11 +408,11 @@
   </div>
 </section>
 
-<!-- ══════════════ BUKU TAMU / KOMENTAR ══════════════ -->
+<!-- ══════════════ KOMENTAR ══════════════ -->
 <section class="section-cute" id="tamu">
   <div class="container">
     <div class="text-center mb-4">
-      <span class="section-tag">BUKU TAMU</span>
+      <span class="section-tag">KOMENTAR</span>
       <h2 class="section-title">Komentar &amp; <span class="hl-blue">Doa Restu</span> 💬</h2>
       <p class="section-sub">Tulis doa, harapan, atau sekadar “gemes banget kalian” — semuanya berarti.</p>
     </div>
@@ -420,7 +420,7 @@
     <div class="row g-4">
       <div class="col-lg-5">
         <form class="comment-form-card" id="commentForm" novalidate>
-          <h3 class="h5" style="font-family:var(--font-display);color:var(--pink-deep)">✉️ Tulis Sesuatu…</h3>
+          <h3 class="h5" style="font-family:var(--font-display);color:var(--pink-deep)">📱 Kirim Pesan via WhatsApp…</h3>
           <label class="form-label fw-bold small mt-2" for="commentName">Nama</label>
           <input class="form-cute" id="commentName" list="nameSuggest" placeholder="Nama kamu…" maxlength="40" autocomplete="name" required />
           <datalist id="nameSuggest">
@@ -429,6 +429,11 @@
             <option value="Sahabat Arif &amp; Arum"></option>
           </datalist>
 
+          <label class="form-label fw-bold small mt-2">Kirim ke siapa?</label>
+          <div class="wa-recipient" role="radiogroup" aria-label="Pilih penerima WhatsApp">
+            <label class="wa-pill"><input type="radio" name="waTarget" value="6285817048266" checked /><span>🧢 Arif</span></label>
+            <label class="wa-pill"><input type="radio" name="waTarget" value="62895343226354" /><span>🧕 Teruskan ke Arum</span></label>
+          </div>
           <label class="form-label fw-bold small mt-2" for="commentText">Pesan</label>
           <textarea class="form-cute" id="commentText" rows="4" maxlength="280" placeholder="Doa, harapan, atau pujian buat mereka berdua…" required></textarea>
           <div class="d-flex justify-content-between align-items-center mt-1 flex-wrap gap-2">
@@ -444,7 +449,8 @@
             </div>
           </div>
           <div class="char-counter"><span id="commentCharCount">0</span>/280</div>
-          <button type="submit" class="btn-cute btn-pink w-100 justify-content-center mt-1" id="btnSubmitComment">Kirim Komentar 💌</button>
+          <button type="submit" class="btn-cute btn-pink w-100 justify-content-center mt-1" id="btnSubmitComment">Kirim via WhatsApp 📱</button>
+          <p class="mt-2 mb-0" style="font-size:.72rem;color:var(--ink-soft);font-weight:600;text-align:center">Pesan terbuka di WhatsApp kamu — tinggal tekan <b>KIRIM</b> di sana 💌</p>
         </form>
       </div>
       <div class="col-lg-7">
@@ -549,7 +555,7 @@
 
 <div id="fabStack" aria-label="Aksi cepat">
   <button class="fab fab-yellow" id="fabMusic" title="Putar / pause OST 🎵" aria-label="Putar atau jeda musik">🎵</button>
-  <button class="fab fab-blue" id="fabComment" title="Ke Buku Tamu 💬" aria-label="Ke buku tamu">💬</button>
+  <button class="fab fab-blue" id="fabComment" title="Ke Komentar 💬" aria-label="Ke komentar">💬</button>
   <button class="fab fab-pink" id="fabTop" title="Kembali ke atas ⬆️" aria-label="Kembali ke atas">⬆️</button>
 </div>
 <button class="hug-btn" id="hugBtn" title="Kirim pelukan virtual 🤗" aria-label="Kirim pelukan virtual">🐻</button>

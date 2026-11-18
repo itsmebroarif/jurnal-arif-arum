@@ -15,7 +15,7 @@ Jurnal romantis **Arif & Arum** — foto perjalanan & petualangan kita, surat ci
 - 💖 **Kursor custom**: 💘 normal · 💖 hover · 💞 saat klik — pujian untuk Arum 🌹, semangat untuk Arif 🔥, penguat hubungan 💗 + *random quote machine* ✨
 - 📖 **Catatan Harian** — scrapbook dengan garis kertas & margin merah ala buku tulis
 - 🤲 **Doa Untuk Kita Berdua** — kesehatan, cinta abadi, sakinah mawaddah, dipertemukan di Surga
-- 💬 **Buku Tamu / Komentar** — SweetAlert2 + backend PHP (`api/comments.php` → `data/comments.json`), **fallback otomatis ke localStorage** saat API tidak tersedia (termasuk di Vercel)
+- 💬 **Komentar** — form mengirim pesan **langsung ke WhatsApp** (pilih penerima: 🧢 Arif / 🧕 Teruskan ke Arum) + daftar komentar tersimpan (PHP `api/comments.php` di Laragon, **fallback localStorage** di Vercel). Menu navbar: **Komentar**
 - 🐻 **Floating icons gemes** (beruang, hati, bintang, bunga) + tombol pelukan virtual 🤗
 - 💌 **“Kirim Diary Ini ke Arum”** — tombol share: membuka WhatsApp (wa.me / Web Share API) dengan teks otomatis; tinggal pilih Arum & kirim
 - 🎀 **Produk Resmi Kita: [PinkyPlan](https://pinkyplan.vercel.app/)** — kartu “produk” paket gemas; satu-satunya produk kita: **ngebucin** 💗
