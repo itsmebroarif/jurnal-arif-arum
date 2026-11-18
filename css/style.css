@@ -802,3 +802,34 @@ body {
   content: ''; position: absolute; top: 50%; left: 50%; width: 8px; height: 8px;
   border-radius: 50%; background: #fff; border: 2px solid #383028; transform: translate(-50%, -50%);
 }
+
+/* ============ OST PLAYLIST MENU (10 TRACK) ============ */
+.ost16-nav-btn {
+  font-family: 'Press Start 2P', monospace; font-size: .75rem;
+  width: 46px; height: 46px; border-radius: 6px; cursor: pointer;
+  background: #241606; color: #ffd838; border: 3px solid #ffd838;
+  box-shadow: 0 5px 0 #383028, 0 0 12px rgba(255,216,56,.35);
+  transition: all .15s;
+}
+.ost16-nav-btn:hover { background: #ffd838; color: #241606; transform: translateY(-2px); box-shadow: 0 7px 0 #383028, 0 0 18px rgba(255,216,56,.55); }
+.ost16-nav-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 #383028; }
+
+.ost16-menu { border-top: 3px solid #ffd838; background: rgba(0,0,0,.42); padding: .75rem .85rem .85rem; position: relative; z-index: 3; }
+.ost16-menu-head { font-family: 'Press Start 2P', monospace; font-size: .48rem; color: #ffd838; letter-spacing: .2em; text-align: center; margin-bottom: .55rem; text-shadow: 0 0 10px rgba(255,216,56,.6); }
+.ost16-menu-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; grid-template-columns: 1fr; }
+@media (min-width: 576px) { .ost16-menu-list { grid-template-columns: 1fr 1fr; } }
+
+.ost16-track {
+  display: flex; align-items: center; gap: .5rem; width: 100%;
+  background: rgba(255,248,220,.06); border: 2px solid rgba(255,216,56,.35); border-radius: 6px;
+  padding: .4rem .5rem; cursor: pointer; text-align: left;
+  font-family: 'Press Start 2P', monospace; font-size: .4rem; color: #ffe9a8; letter-spacing: .06em;
+  transition: all .12s;
+}
+.ost16-track:hover:not(:disabled) { border-color: #ffd838; background: rgba(255,216,56,.16); transform: translateX(4px); }
+.ost16-track:focus-visible { outline: 3px solid #ffd838; outline-offset: 2px; }
+.ost16-track.current { background: #ffd838; border-color: #241606; color: #241606; box-shadow: 0 0 16px rgba(255,216,56,.6); }
+.ost16-track.current .ost16-track-num { color: #a85408; }
+.ost16-track.locked { opacity: .38; cursor: not-allowed; filter: saturate(.35); }
+.ost16-track-num { color: #ff9088; }
+.ost16-track-name { flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

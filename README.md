@@ -9,7 +9,7 @@ Jurnal romantis **Arif & Arum** — foto perjalanan & petualangan kita, surat ci
 ## ✨ Fitur
 
 - 🎮 **Splash screen — Pokémon Gold title screen**: sunburst kuning, teks pixel “DIARY / ARIF & ARUM / <3” drop-in ala title screen, tombol **▶ PRESS START** berkedip, copyright “© 2026 ARIF & ARUM”
-- 💿 **OST "Our New World"** — **Arif Permana Putrasuryana** · official OST diary ini — diputar sebagai **vinyl 16-bit gemas yang berputar**, dengan siluet anime gemas Arif & Arum berpelukan (SVG digambar manual: Arum hijab rim-light pink × Arif rambut acak rim-light cyan, bintang pixel & pixel heart), label “16-BIT GEMAS EDITION”, equalizer pixel + tombol PLAY/PAUSE chunky
+- 💿 **Playlist 10 track** — **OST "Our New World"** — Arif Permana Putrasuryana — **Arif Permana Putrasuryana** · official OST diary ini — diputar sebagai **vinyl 16-bit gemas yang berputar**, dengan siluet anime gemas Arif & Arum berpelukan (SVG digambar manual: Arum hijab rim-light pink × Arif rambut acak rim-light cyan, bintang pixel & pixel heart), label “16-BIT GEMAS EDITION”, equalizer pixel + tombol PLAY/PAUSE chunky
 - 🗺️ **Petualangan Kita** (dulu “Kenangan”) — polaroid aesthetic, filter (Kencan / Video Call / Malam Berdua), lightbox, 💖, dan **tambah momen baru** (upload foto dari HP — otomatis dikompresi — atau tempel link)
 - 🃏 **Surat Cinta ala Pokémon Card** — No.001 ARUM · No.006 ARIF · No.150 HUBUNGAN (HP ∞, LV.MAX / SHINY ★)
 - 💖 **Kursor custom**: 💘 normal · 💖 hover · 💞 saat klik — pujian untuk Arum 🌹, semangat untuk Arif 🔥, penguat hubungan 💗 + *random quote machine* ✨
@@ -52,11 +52,25 @@ vercel --prod   # production
 
 > 📌 **Catatan komentar di Vercel:** Vercel tidak menjalankan PHP di static hosting, jadi `api/comments.php` tidak aktif — komentar otomatis tersimpan di **localStorage browser** (tetap berfungsi penuh). Untuk komentar persisten lintas-perangkat, upgrade opsional: [Vercel KV](https://vercel.com/docs/storage/vercel-kv) atau [Vercel Postgres](https://vercel.com/docs/storage/vercel-postgres) — beri tahu saya kalau mau di-wire.
 
-## 🎵 Tentang OST & `ost.mp3`
+## 🎵 Tentang OST — Playlist 10 Track
 
-OST diary ini: **“Our New World” — Arif Permana Putrasuryana** 💗
+OST diary ini: **“Our New World” — Arif Permana Putrasuryana** 💗 — diputar lewat kartu vinyl 16-bit di website.
 
-File `ost.mp3` **sudah ikut di-push & di-deploy** (oleh pemilik repo), jadi tombol ▶ PLAY di kartu vinyl 16-bit langsung bunyi di mana pun situsnya dibuka.
+Sekarang mendukung **10 track**: `data/1.mp3` sampai `data/10.mp3`.
+
+| Slot | Status |
+|------|--------|
+| `data/1.mp3` | ✅ **Our New World** — tersedia |
+| `data/2.mp3` – `data/10.mp3` | 🔒 terkunci — otomatis terbuka saat file ditambahkan |
+
+**Menambah lagu baru (2–10):**
+1. Siapkan file MP3 kamu, rename jadi `2.mp3` … `10.mp3`
+2. Taruh di folder `data/`
+3. `git add data/ && git commit -m "add track" && git push`
+4. Vercel auto-deploy → lagu langsung bisa diputar dari menu **♪ PETUALANGAN MUSIK** di kartu vinyl (tanpa ubah kode)
+
+Track terakhir yang diputar tersimpan otomatis di browser (`aa_last_track`). Lagu berganti otomatis ke track berikutnya saat selesai.
+
 
 ## 💌 Mengirim ke Arum
 
@@ -73,7 +87,7 @@ jurnal_arif_arum/
 ├── js/app.js           # Galeri, lightbox, diary, komentar, OST player, share WA, floating icons
 ├── api/comments.php    # Backend komentar (PHP, untuk Laragon/hosting PHP)
 ├── data/comments.json  # Penyimpanan komentar (Laragon)
-├── data/ost.mp3        # OST — ikut di-deploy, tombol PLAY langsung bunyi
+├── data/1.mp3 … 10.mp3  # OST playlist (1.mp3 = Our New World, sisanya ???)
 ├── vercel.json         # Konfigurasi deploy Vercel
 └── img/                # Foto & video perjalanan & petualangan kita
 ```

@@ -188,18 +188,24 @@
           </div>
         </div>
         <div class="ost16-info col text-center text-md-start">
-          <p class="ost16-kicker">TRACK 09 · SIDE A · QA-ARIF-ARUM</p>
-          <h3 class="ost16-title">OUR NEW<br />WORLD</h3>
-          <p class="ost16-artist">ARIF PERMANA PUTRASURYANA</p>
-          <p class="ost16-album">OFFICIAL OST · DIARY ARIF &amp; ARUM</p>
-          <p class="ost16-note">Pas banget buat kita: perjalanan panjang mencari “rumah baru” yang akhirnya pulang — dan di rumah mana pun, selalu ada kamu. 🏡💕 <span class="ost16-fan">(fan homage dari Arif, buat Arum 💗)</span></p>
-          <div class="d-flex align-items-center gap-3 justify-content-center justify-content-md-start flex-wrap mt-3">
-            <div class="equalizer ost16-eq" id="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <p class="ost16-kicker" id="trackIndicator">TRACK 01 · SIDE A · QA-ARIF-ARUM</p>
+          <h3 class="ost16-title" id="ostTrackTitle">OUR NEW<br />WORLD</h3>
+          <p class="ost16-artist" id="ostTrackArtist">ARIF PERMANA PUTRASURYANA</p>
+          <p class="ost16-album" id="ostTrackAlbum">OFFICIAL OST · DIARY ARIF &amp; ARUM</p>
+          <p class="ost16-note">Pas banget buat kita: perjalanan panjang mencari “rumah baru” yang akhirnya pulang — dan di rumah mana pun, selalu ada kamu. 🏡💕 <span class="ost16-fan">(OST favorit dari Arif, buat Arum 💗)</span></p>
+          <div class="d-flex align-items-center gap-2 justify-content-center justify-content-md-start flex-wrap mt-3">
+            <button class="ost16-nav-btn" id="btnPrevTrack" aria-label="Lagu sebelumnya">◀</button>
             <button class="ost16-btn" id="btnToggleOst">▶ PLAY</button>
+            <button class="ost16-nav-btn" id="btnNextTrack" aria-label="Lagu berikutnya">▶</button>
+            <div class="equalizer ost16-eq" id="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
           </div>
         </div>
       </div>
-      <audio id="ostAudio" src="data/ost.mp3" preload="none" loop></audio>
+      <div class="ost16-menu" aria-label="Playlist lagu">
+        <div class="ost16-menu-head">♪ PETUALANGAN MUSIK — 10 TRACK ♪</div>
+        <ol class="ost16-menu-list" id="ostMenuList"></ol>
+      </div>
+      <audio id="ostAudio" src="data/1.mp3" preload="none"></audio>
     </div>
   </div>
 </section>
